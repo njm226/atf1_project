@@ -38,7 +38,7 @@ if __name__ == '__main__':
     status_small = pool.map(ss, repeat) 
     status_m = pool.map(ss, repeat_sm) 
     status_l = pool.map(ss, repeat_l) 
-    status_max = pool.map(ss, repeat_l) 
+    status_max = pool.map(ss, repeat_max) 
 
 #small system
 reporters_diff_small = np.zeros([len(repeat),duration])
@@ -322,38 +322,38 @@ EcoRV_total_max = (sum(EcoRV_list_max))/reps
 
 
 
-# # save state_list
-# with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_small, F)
+# save state_list
+with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_(pos_122_pos132).txt', 'wb') as F:
+    pickle.dump(EcoRV_total_small, F)
     
-# # save state_list
-# with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_m, F)
+# save state_list
+with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
+    pickle.dump(EcoRV_total_m, F)
     
-# # save state_list
-# with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_l, F)
+# save state_list
+with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
+    pickle.dump(EcoRV_total_l, F)
     
-# # save state_list
-# with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_AE28.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_max, F)
+# save state_list
+with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos_93_pos132).txt', 'wb') as F:
+    pickle.dump(EcoRV_total_max, F)
     
 
-# # save state_list
-# with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present.txt', 'wb') as F:
-#     pickle.dump(cenH_total_small, F)
+# save state_list
+with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos_122_pos132).txt', 'wb') as F:
+    pickle.dump(cenH_total_small, F)
     
-# # save state_list
-# with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
-#     pickle.dump(cenH_total_m, F)
+# save state_list
+with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
+    pickle.dump(cenH_total_m, F)
     
-# # save state_list
-# with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
-#     pickle.dump(cenH_total_l, F)
+# save state_list
+with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
+    pickle.dump(cenH_total_l, F)
     
-# # save state_list
-# with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_AE28.txt', 'wb') as F:
-#     pickle.dump(cenH_total_max, F)
+# save state_list
+with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos_93_pos132).txt', 'wb') as F:
+    pickle.dump(cenH_total_max, F)
     
     
     
@@ -380,7 +380,7 @@ ax1.set_ylim([0.001,1])
 ax1.set_xlim([1,200])
 ax1.legend(fontsize='25')
 
-plt.savefig("UtoS_S300_all_100_atf1_pos122_pos132.pdf")
+plt.savefig("UtoS_S300_all_100_atf1_pos93_pos132.pdf")
     
 
 # #fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=((36, 12)))
