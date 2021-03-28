@@ -22,7 +22,7 @@ pool = multiprocessing.Pool(multiprocessing.cpu_count())
 X_Y_atf1_on=[[182,100,100,0]] #X_Y_atf1_on=[[182,49,130,0]]
 X_Y_atf1_off=[[182,100,100,1]] #X_Y_atf1_off=[[182,49,130,1]]
 X_Y_atf1_BS1_on=[[182,100,100,2]] #X_Y_atf1_off=[[182,49,130,1]]
-#X_Y_atf1_on_AE28=[[153,50,120,3]] #X_Y_atf1_off=[[182,49,130,1]]
+X_Y_atf1_on_AE28=[[153,100,100,3]] #X_Y_atf1_off=[[182,49,130,1]]
 
 
 reps=10000
@@ -323,15 +323,15 @@ EcoRV_total_l = (sum(EcoRV_list_l))/reps
 
 
 # save state_list
-with open('UtoS_Atf1_on_S40_AtoU_100_UtoM_100_both_present.txt', 'wb') as F:
+with open('UtoS_Atf1_on_S100_AtoU_100_UtoM_100_both_present.txt', 'wb') as F:
     pickle.dump(EcoRV_total_small, F)
     
 # save state_list
-with open('UtoS_Atf1_on_S40_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
+with open('UtoS_Atf1_on_S100_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
     pickle.dump(EcoRV_total_m, F)
     
 # save state_list
-with open('UtoS_Atf1_on_S40_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
+with open('UtoS_Atf1_on_S100_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
     pickle.dump(EcoRV_total_l, F)
     
 # # save state_list
@@ -340,15 +340,15 @@ with open('UtoS_Atf1_on_S40_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb'
     
 
 # save state_list
-with open('cenH_UtoS_Atf1_on_S40_AtoU_100_UtoM_100_both_present.txt', 'wb') as F:
+with open('cenH_UtoS_Atf1_on_S100_AtoU_100_UtoM_100_both_present.txt', 'wb') as F:
     pickle.dump(cenH_total_small, F)
     
 # save state_list
-with open('cenH_UtoS_Atf1_on_S40_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
+with open('cenH_UtoS_Atf1_on_S100_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
     pickle.dump(cenH_total_m, F)
     
 # save state_list
-with open('cenH_UtoS_Atf1_on_S40_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
+with open('cenH_UtoS_Atf1_on_S100_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
     pickle.dump(cenH_total_l, F)
     
 # # save state_list
@@ -380,7 +380,7 @@ ax1.set_ylim([0.001,1])
 ax1.set_xlim([1,200])
 ax1.legend(fontsize='25')
 
-plt.savefig("UtoS_S40_all_100.pdf")
+plt.savefig("UtoS_S100_all_100.pdf")
     
 
 # #fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=((36, 12)))
