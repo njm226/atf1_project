@@ -73,7 +73,7 @@ def simple(X_Y):
     elif atf1 == 2:
     
         beta6 = 0.00001*len(mt_region)
-        beta7 = 40*len(mt_region)
+        beta7 = 300*len(mt_region)
         
     elif atf1 == 3:
     
