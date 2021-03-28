@@ -11,7 +11,7 @@ import numpy as np
 #import pandas as pd
 import matplotlib.pyplot as plt
 #from smaller_model_function_AtoU import simple_small as ss
-from AtoU_model import simple as ss
+from UtoS_model import simple as ss
 import multiprocessing
 #import time
 import pickle
