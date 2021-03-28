@@ -380,7 +380,7 @@ ax1.set_ylim([0.001,1])
 ax1.set_xlim([1,200])
 ax1.legend(fontsize='25')
 
-plt.savefig("UtoS_S300_all_100_atf1_pos110_pos132.pdf")
+plt.savefig("UtoS_S300_all_100_atf1_pos122_pos132.pdf")
     
 
 # #fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=((36, 12)))
