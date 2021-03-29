@@ -322,38 +322,38 @@ EcoRV_total_max = (sum(EcoRV_list_max))/reps
 
 
 
-# # save state_list
-# with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_small, F)
+# save state_list
+with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
+    pickle.dump(EcoRV_total_small, F)
     
-# # save state_list
-# with open('AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_m, F)
+# save state_list
+with open('AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
+    pickle.dump(EcoRV_total_m, F)
     
-# # save state_list
-# with open('AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_all.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_l, F)
+# save state_list
+with open('AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_all.txt', 'wb') as F:
+    pickle.dump(EcoRV_total_l, F)
     
-# # save state_list
-# with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos93_pos132)_S250_all.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_max, F)
+# save state_list
+with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos92_pos132)_S250_all.txt', 'wb') as F:
+    pickle.dump(EcoRV_total_max, F)
     
 
-# # save state_list
-# with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
-#     pickle.dump(cenH_total_small, F)
+# save state_list
+with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
+    pickle.dump(cenH_total_small, F)
     
-# # save state_list
-# with open('cenH_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
-#     pickle.dump(cenH_total_m, F)
+# save state_list
+with open('cenH_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
+    pickle.dump(cenH_total_m, F)
     
-# # save state_list
-# with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_alltxt', 'wb') as F:
-#     pickle.dump(cenH_total_l, F)
+# save state_list
+with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_all.txt', 'wb') as F:
+    pickle.dump(cenH_total_l, F)
     
-# # save state_list
-# with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos93_pos132)_S250_all.txt', 'wb') as F:
-#     pickle.dump(cenH_total_max, F)
+# save state_list
+with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos92_pos132)_S250_all.txt', 'wb') as F:
+    pickle.dump(cenH_total_max, F)
     
     
     
