@@ -396,7 +396,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
                      
              elif pos_conv == 93 and nuc_conv == 1 and atf1==3: #   if pos_conv == 92 and
              #     # the state of the nucleosome is changed to U
-             #         mt_region[pos_conv]=2
+                      mt_region[pos_conv]=2
                      
                      
                      
