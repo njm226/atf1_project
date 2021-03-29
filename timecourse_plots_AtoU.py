@@ -322,38 +322,38 @@ EcoRV_total_max = (sum(EcoRV_list_max))/reps
 
 
 
-# save state_list
-with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
-    pickle.dump(EcoRV_total_small, F)
+# # save state_list
+# with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
+#     pickle.dump(EcoRV_total_small, F)
     
-# save state_list
-with open('AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
-    pickle.dump(EcoRV_total_m, F)
+# # save state_list
+# with open('AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
+#     pickle.dump(EcoRV_total_m, F)
     
-# save state_list
-with open('AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_all.txt', 'wb') as F:
-    pickle.dump(EcoRV_total_l, F)
+# # save state_list
+# with open('AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_all.txt', 'wb') as F:
+#     pickle.dump(EcoRV_total_l, F)
     
-# save state_list
-with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos93_pos132)_S250_all.txt', 'wb') as F:
-    pickle.dump(EcoRV_total_max, F)
+# # save state_list
+# with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos93_pos132)_S250_all.txt', 'wb') as F:
+#     pickle.dump(EcoRV_total_max, F)
     
 
-# save state_list
-with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
-    pickle.dump(cenH_total_small, F)
+# # save state_list
+# with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
+#     pickle.dump(cenH_total_small, F)
     
-# save state_list
-with open('cenH_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
-    pickle.dump(cenH_total_m, F)
+# # save state_list
+# with open('cenH_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
+#     pickle.dump(cenH_total_m, F)
     
-# save state_list
-with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_alltxt', 'wb') as F:
-    pickle.dump(cenH_total_l, F)
+# # save state_list
+# with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_alltxt', 'wb') as F:
+#     pickle.dump(cenH_total_l, F)
     
-# save state_list
-with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos93_pos132)_S250_all.txt', 'wb') as F:
-    pickle.dump(cenH_total_max, F)
+# # save state_list
+# with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos93_pos132)_S250_all.txt', 'wb') as F:
+#     pickle.dump(cenH_total_max, F)
     
     
     
@@ -365,10 +365,10 @@ y_axis = np.array([cenH_total_small, EcoRV_total_small,  cenH_total_m, EcoRV_tot
 #fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=((36, 12)))
 fig, (ax1) = plt.subplots(nrows=1, ncols=1, figsize=((15, 10)))
 #default line colors and styles
-ax1.plot(time,EcoRV_total_small, color='yellowgreen', label='mCherry wt: both atf1-sites present (pos 94 and pos 104)')
+ax1.plot(time,EcoRV_total_small, color='yellowgreen', label='mCherry wt: both atf1-sites present (pos 122 and pos 132)')
 ax1.plot(time,cenH_total_small, color='cyan', label='cenH wt: both atf1-sites present ')
 ax1.plot(time,EcoRV_total_m, color='black', label='mCherry wt: both atf1-sites deleted')
-ax1.plot(time,EcoRV_total_l, color='grey', label='mCherry wt: one atf1-site deleted (at pos 104)')
+ax1.plot(time,EcoRV_total_l, color='grey', label='mCherry wt: one atf1-site deleted (at pos 122)')
 ax1.plot(time,EcoRV_total_max, color='red', label='mCherry ME2: both atf1-sites present (4.5 kb AE28)')
 #ax1.plot(time,cenH_total_m,'ro', label='cenH 24 kb region')
 ax1.legend(loc='upper left')
@@ -380,7 +380,7 @@ ax1.set_ylim([0.001,1])
 ax1.set_xlim([1,200])
 ax1.legend(fontsize='25')
 
-plt.savefig("AtoU_50_UtoM_120_all_special_250.pdf")
+plt.savefig("AtoU_50_UtoM_120_all_special_100.pdf")
     
 
 # #fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=((36, 12)))
