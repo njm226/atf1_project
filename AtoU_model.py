@@ -6,8 +6,8 @@ from AtoU import t_loop
 import AtoU
 import importlib
 importlib.reload(AtoU)
-#import pandas as pd
-#import matplotlib.pyplot as plt
+import pandas as pd
+import matplotlib.pyplot as plt
 
 def simple(X_Y):
     
@@ -19,7 +19,7 @@ def simple(X_Y):
     positions = np.arange(len(mt_region), dtype=np.int32)
     
 
-    duration = 201#201#15#101#15#101#15#101#15#101#10#61#15
+    duration = 101#201#15#101#15#101#15#101#15#101#10#61#15
     
     
     # rates
@@ -94,32 +94,32 @@ def simple(X_Y):
     
     
     
-    # positions = list(positions)
-    # x = positions*(duration) # at the x-axis, the position values are repeated 30 times
-    # y = [] # and for the y-axis, each valueis repeated 30 times
-    # for i in range(duration):
-    #     for j in range(len(positions)):
-    #         y.append(positions[i]) 
+    positions = list(positions)
+    x = positions*(duration) # at the x-axis, the position values are repeated 30 times
+    y = [] # and for the y-axis, each valueis repeated 30 times
+    for i in range(duration):
+        for j in range(len(positions)):
+            y.append(positions[i]) 
     
     
-    # x = np.array(x) # such that all PR_DUB and NURD values
-    # y = np.array(y) # are paired
-    # states = np.array(states)
-    # #print(len(x),len(y),len(states))
-    # df = pd.DataFrame(dict(x=x, y=y, state=states))
+    x = np.array(x) # such that all PR_DUB and NURD values
+    y = np.array(y) # are paired
+    states = np.array(states)
+    #print(len(x),len(y),len(states))
+    df = pd.DataFrame(dict(x=x, y=y, state=states))
     
-    # # plot
+    # plot
     
-    # nuc_states = df.groupby('state')
+    nuc_states = df.groupby('state')
     
-    # fig, ax = plt.subplots(figsize=(12,12)) # a new (quadratic) figure is generated
-    # #ax.margins(0.05) # Optional, just adds 5% padding to the autoscaling
-    # for name, state in nuc_states: # goes through all  3 groups
-    #     ax.plot(state.x, state.y, marker = 'o', color = name, linestyle='', ms = 2.5, label=name)
-    #     #ax.set_ylabel('Time (cell generations)', fontsize = 20)
-    #     #ax.set_xlabel('Nucleosomes', fontsize = 20)
-    #     ax.tick_params(labelsize='50')
-    #     ax.set_title("31 kb system", fontsize ='60')
+    fig, ax = plt.subplots(figsize=(12,12)) # a new (quadratic) figure is generated
+    #ax.margins(0.05) # Optional, just adds 5% padding to the autoscaling
+    for name, state in nuc_states: # goes through all  3 groups
+        ax.plot(state.x, state.y, marker = 'o', color = name, linestyle='', ms = 2.5, label=name)
+        #ax.set_ylabel('Time (cell generations)', fontsize = 20)
+        #ax.set_xlabel('Nucleosomes', fontsize = 20)
+        ax.tick_params(labelsize='50')
+        ax.set_title("31 kb system", fontsize ='60')
     
     ##plt.savefig("timecourse_203_new.pdf")
         
@@ -152,10 +152,10 @@ def simple(X_Y):
 
     return list(cenH_status_list), list(EcoRV_status_list)
  
-# if __name__ == '__main__':
-#     import time
-#     #import cProfile
-#     t1 = time.time()
-#     simple([191, 50, 110, 0])
-#     print(time.time() - t1)
+if __name__ == '__main__':
+    import time
+    #import cProfile
+    t1 = time.time()
+    simple([153, 50, 110, 0])
+    print(time.time() - t1)
 

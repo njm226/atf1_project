@@ -6,8 +6,8 @@ from UtoS import t_loop
 import UtoS
 import importlib
 importlib.reload(UtoS)
-import pandas as pd
-import matplotlib.pyplot as plt
+#import pandas as pd
+#import matplotlib.pyplot as plt
 
 def simple(X_Y):
     
