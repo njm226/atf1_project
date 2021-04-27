@@ -19,10 +19,10 @@ pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
 
 
-X_Y_atf1_on=[[182,100,100,0]] #X_Y_atf1_on=[[182,49,130,0]]
-X_Y_atf1_off=[[182,100,100,1]] #X_Y_atf1_off=[[182,49,130,1]]
-X_Y_atf1_BS1_on=[[182,100,100,2]] #X_Y_atf1_off=[[182,49,130,1]]
-X_Y_atf1_on_AE28=[[182,100,100,3]] #X_Y_atf1_off=[[182,49,130,1]]
+X_Y_atf1_on=[[153,100,100,0]] #X_Y_atf1_on=[[182,49,130,0]]
+X_Y_atf1_off=[[153,100,100,1]] #X_Y_atf1_off=[[182,49,130,1]]
+X_Y_atf1_BS1_on=[[153,100,100,2]] #X_Y_atf1_off=[[182,49,130,1]]
+X_Y_atf1_on_AE28=[[153,100,100,3]] #X_Y_atf1_off=[[182,49,130,1]]
 
 
 reps=10000
@@ -322,69 +322,75 @@ EcoRV_total_max = (sum(EcoRV_list_max))/reps
 
 
 
-# save state_list
-with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos122_pos132).txt', 'wb') as F:
-    pickle.dump(EcoRV_total_small, F)
-    
-# save state_list
-with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
-    pickle.dump(EcoRV_total_m, F)
-    
-# save state_list
-with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos122).txt', 'wb') as F:
-    pickle.dump(EcoRV_total_l, F)
-    
-# save state_list
-with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos92_pos132).txt', 'wb') as F:
-    pickle.dump(EcoRV_total_max, F)
-    
-
-# save state_list
-with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos122_pos132).txt', 'wb') as F:
-    pickle.dump(cenH_total_small, F)
-    
-# save state_list
-with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
-    pickle.dump(cenH_total_m, F)
-    
-# save state_list
-with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
-    pickle.dump(cenH_total_l, F)
-    
-# save state_list
-with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos_92_pos132).txt', 'wb') as F:
-    pickle.dump(cenH_total_max, F)
-    
-    
-    
-    
 # # save state_list
-# with open('wt_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_(pos92_pos102).txt', 'wb') as F:
+# with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos122_pos132).txt', 'wb') as F:
 #     pickle.dump(EcoRV_total_small, F)
     
 # # save state_list
-# with open('wt_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
+# with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
 #     pickle.dump(EcoRV_total_m, F)
     
 # # save state_list
-# with open('wt_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos102).txt', 'wb') as F:
+# with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos122).txt', 'wb') as F:
 #     pickle.dump(EcoRV_total_l, F)
     
-
+# # save state_list
+# with open('UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos92_pos132).txt', 'wb') as F:
+#     pickle.dump(EcoRV_total_max, F)
+    
 
 # # save state_list
-# with open('wt_cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos02_pos102).txt', 'wb') as F:
+# with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos122_pos132).txt', 'wb') as F:
 #     pickle.dump(cenH_total_small, F)
     
 # # save state_list
-# with open('wt_cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
+# with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
 #     pickle.dump(cenH_total_m, F)
     
 # # save state_list
-# with open('wt_cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos_92).txt', 'wb') as F:
+# with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos_122).txt', 'wb') as F:
 #     pickle.dump(cenH_total_l, F)
     
+# # save state_list
+# with open('cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos_92_pos132).txt', 'wb') as F:
+#    pickle.dump(cenH_total_max, F)
+    
+    
+    
+    
+# save state_list
+with open('wt_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_(pos92_pos102).txt', 'wb') as F:
+    pickle.dump(EcoRV_total_small, F)
+    
+# save state_list
+with open('wt_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
+    pickle.dump(EcoRV_total_m, F)
+    
+# save state_list
+with open('wt_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos92).txt', 'wb') as F:
+    pickle.dump(EcoRV_total_l, F)
+    
+# save state_list
+with open('wt_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos102).txt', 'wb') as F:
+    pickle.dump(EcoRV_total_max, F)
+    
 
+
+# save state_list
+with open('wt_cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_present_(pos02_pos102).txt', 'wb') as F:
+    pickle.dump(cenH_total_small, F)
+    
+# save state_list
+with open('wt_cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_both_deleted.txt', 'wb') as F:
+    pickle.dump(cenH_total_m, F)
+    
+# save state_list
+with open('wt_cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos_92).txt', 'wb') as F:
+    pickle.dump(cenH_total_l, F)
+    
+# save state_list
+with open('wt_cenH_UtoS_Atf1_on_S300_AtoU_100_UtoM_100_one_deleted(at_pos_102).txt', 'wb') as F:
+    pickle.dump(cenH_total_max, F)
 
 time = np.array(range(duration))
 
@@ -396,8 +402,8 @@ fig, (ax1) = plt.subplots(nrows=1, ncols=1, figsize=((15, 10)))
 ax1.plot(time,EcoRV_total_small, color='yellowgreen', label='mCherry: both atf1-sites present (pos 122 and pos 132)')
 ax1.plot(time,cenH_total_small, color='cyan', label='cenH: both atf1-sites present ')
 ax1.plot(time,EcoRV_total_m, color='black', label='mCherr: both atf1-sites deleted')
-ax1.plot(time,EcoRV_total_l, color='grey', label='mCherry: one atf1-site deleted (at pos 122)')
-ax1.plot(time,EcoRV_total_max, color='red', label='mCherry: both atf1-sites present (pos 92 and pos 132)')
+ax1.plot(time,EcoRV_total_l, color='grey', label='mCherry: one atf1-site deleted (at pos 92)')
+ax1.plot(time,EcoRV_total_max, color='red', label='mCherry: one atf1-site deleted (at pos 102)')
 #ax1.plot(time,cenH_total_m,'ro', label='cenH 24 kb region')
 ax1.legend(loc='upper left')
 #ax1.set_ylabel("fraction of 'ON' cells", fontsize = 35)  
@@ -408,7 +414,7 @@ ax1.set_ylim([0.001,1])
 ax1.set_xlim([1,200])
 ax1.legend(fontsize='25')
 
-plt.savefig("27.5_UtoS_S300_all_100_atf1_pos122_pos132.pdf")
+plt.savefig("wt_UtoS_S300_all_100_atf1_pos92_pos102.pdf")
     
 
 # #fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=((36, 12)))
