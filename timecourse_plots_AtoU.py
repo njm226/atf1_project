@@ -367,10 +367,14 @@ with open('wt_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as
     pickle.dump(EcoRV_total_m, F)
     
 # save state_list
-with open('wt_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos102)_S250_all.txt', 'wb') as F:
+with open('wt_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos92)_S250_all.txt', 'wb') as F:
     pickle.dump(EcoRV_total_l, F)
     
-
+# save state_list
+with open('wt_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos102)_S250_all.txt', 'wb') as F:
+    pickle.dump(EcoRV_total_max, F)
+    
+    
 
 # save state_list
 with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos92_pos102)_S250_all.txt', 'wb') as F:
@@ -381,8 +385,12 @@ with open('wt_cenH_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb
     pickle.dump(cenH_total_m, F)
     
 # save state_list
-with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos102)_S250_all.txt', 'wb') as F:
+with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos92)_S250_all.txt', 'wb') as F:
     pickle.dump(cenH_total_l, F)
+    
+# save state_list
+with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos102)_S250_all.txt', 'wb') as F:
+    pickle.dump(cenH_total_max, F)
     
 
 
@@ -393,11 +401,11 @@ y_axis = np.array([cenH_total_small, EcoRV_total_small,  cenH_total_m, EcoRV_tot
 #fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=((36, 12)))
 fig, (ax1) = plt.subplots(nrows=1, ncols=1, figsize=((15, 10)))
 #default line colors and styles
-ax1.plot(time,EcoRV_total_small, color='yellowgreen', label='mCherry wt: both atf1-sites present (pos 122 and pos 132)')
+ax1.plot(time,EcoRV_total_small, color='yellowgreen', label='mCherry wt: both atf1-sites present (pos 92 and pos 102)')
 ax1.plot(time,cenH_total_small, color='cyan', label='cenH wt: both atf1-sites present ')
 ax1.plot(time,EcoRV_total_m, color='black', label='mCherry wt: both atf1-sites deleted')
-ax1.plot(time,EcoRV_total_l, color='grey', label='mCherry wt: one atf1-site deleted (at pos 122)')
-#ax1.plot(time,EcoRV_total_max, color='red', label='mCherry ME2: both atf1-sites present (4.5 kb AE28)')
+ax1.plot(time,EcoRV_total_l, color='grey', label='mCherry wt: one atf1-site deleted (at pos 92)')
+ax1.plot(time,EcoRV_total_max, color='red', label='mCherry wt: one atf1-site deleted (at pos 102)')
 #ax1.plot(time,cenH_total_m,'ro', label='cenH 24 kb region')
 ax1.legend(loc='upper left')
 #ax1.set_ylabel("fraction of 'ON' cells", fontsize = 35)  
