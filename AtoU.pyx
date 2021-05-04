@@ -448,8 +448,13 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
             
             if cenH_red - cenH_blue >= threshold1:
                 cenH_silent = 1
+            else:
+                cenH_silent = 0
+                
             if EcoRV_red - EcoRV_blue >= threshold2:
                 EcoRV_silent = 1
+            else:
+                EcoRV_silent = 0
         
                     
             cenH_status_list[int(T)]=cenH_silent

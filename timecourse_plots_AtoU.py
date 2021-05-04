@@ -22,7 +22,8 @@ pool = multiprocessing.Pool(multiprocessing.cpu_count())
 X_Y_atf1_on=[[153,50,120,0]] #X_Y_atf1_on=[[182,49,130,0]]
 X_Y_atf1_off=[[153,50,120,1]] #X_Y_atf1_off=[[182,49,130,1]]
 X_Y_atf1_BS1_on=[[153,50,120,2]] #X_Y_atf1_off=[[182,49,130,1]]
-X_Y_atf1_on_AE28=[[153,50,120,3]] #X_Y_atf1_off=[[182,49,130,1]]
+#X_Y_atf1_on_AE28=[[153,50,120,3]] #X_Y_atf1_off=[[182,49,130,1]]
+X_Y_atf1_on_AE28=[[153,50,120,4]] #X_Y_atf1_off=[[182,49,130,1]]
 
 
 reps=10000
