@@ -78,17 +78,13 @@ for i in X:
         
 state_list = pool.map(ss, data_pairs_small)
 
-     
-
-#if mode == 0:
-        # save state_list
-with open('state_g_full_AtoU.txt', 'wb') as F:
-      pickle.dump(state_list, F)
 
 
-Timing = []
-all_criteria = []
-Differences = []
+with open('state_ss_atf1_AtoU_direct1.txt', 'wb') as F:
+      pickle.dump(state_list, F)   
+
+
+
 
 b_value_list = []
 
@@ -113,7 +109,6 @@ for i in range(len(data_pairs)):
     repeat = [data_pairs[i]]*reps
     repeat_sm = [data_pairs_sm[i]]*reps
     repeat_sl = [data_pairs_sl[i]]*reps
-#    repeat_max = [data_pairs_l[i]]*reps
     
     
     # store the simulation results (status list of cenH and EcoRV) of each simulation
@@ -122,7 +117,6 @@ for i in range(len(data_pairs)):
         status_small = pool.map(simple, repeat) 
         status_m = pool.map(simple, repeat_sm) 
         status_large = pool.map(simple, repeat_sl) 
-#        status_max = pool.map(simple, repeat_max)
 
     
     # two dimensional arrays with dimensions len(repeat) and duration (pre allocation)
@@ -138,8 +132,8 @@ for i in range(len(data_pairs)):
     EcoRV_list_large = np.zeros([len(repeat),duration])
     
     
-    # cenH_list_max = np.zeros([len(repeat),duration])
-    # EcoRV_list_max = np.zeros([len(repeat),duration])
+    cenH_list_max = np.zeros([len(repeat),duration])
+    EcoRV_list_max = np.zeros([len(repeat),duration])
     
     
 
@@ -194,21 +188,6 @@ for i in range(len(data_pairs)):
         
         
         
-        
-        
-        
-        # cenH_max = np.array(status_max[elt][0])
-        # EcoRV_max = np.array(status_max[elt][1])
-        
-        # #switch the values of the list (1 stands now for timepoint when reporter is on)
-        # cenH_max=1-cenH_max
-        # EcoRV_max=1-EcoRV_max
-        
-        # # stores the cenH part in a seperate two dimensional array (reps X duration)
-        # cenH_list_max[elt]=cenH_max
-        # EcoRV_list_max[elt]=EcoRV_max
-        
-        
         # print(cenH_small)
         # print(cenH_m)
         # print(cenH_large)
@@ -239,16 +218,10 @@ for i in range(len(data_pairs)):
     
     
     
-    # cenH_total_max = (sum(cenH_list_max))/reps
-    
-    # ymax = (sum(EcoRV_list_max))/reps
-    
-    
 
     ys = ys[3:]
     ym = ym[3:]
     yl = yl[3:]
-#    ymax = ymax[3:]
     x = np.array(range(duration-3))  
         
     # fitting function
@@ -281,103 +254,19 @@ for i in range(len(data_pairs)):
     
     b_l = popt_l[1]
     
-    
-    
-     
-    if  b_s >= 3.8 and b_s <= 11.4: #mean: 7.6 (50% difference: 3.8 and 11.4) (25% difference: 5.7 and 9.5) (35% difference: 4.94 and 10.26)
-   
-        EcoRV_timing = 1
-    else:
-        EcoRV_timing = 0
+    #a_l, b_l = unc.correlated_values(popt_l, pcov_l)
     
 
-    if b_m > 14.1 and b_m <= 42.3: #mean: 28.2 (50% difference: 14.1 and 42.3) (25% difference: 21.15 and 35.25)(35% difference: 18.33 and 38.07)
-  
-        EcoRV_timing_sm = 1
-    else:
-        EcoRV_timing_sm = 0
-        
-        
-    if b_l > 6.9 and b_l <= 20.7: #mean: 13.8 (50% difference: 6.9 and 20.7) (25% difference: 10.35 and 17.25)(35% difference: 8.97 and 18.63)
-    #if EcoRV_Average_sl >= 15 and EcoRV_Average_sl <= 19:
-        # this timing criterion has been met
-        EcoRV_timing_sl = 1
-    else:
-        EcoRV_timing_sl = 0
-        
-
-        
-     # change color of state_list from blue to lighter blue
-    if state_list[i] == 'white':
-        state_list[i] = 7#'royalblue'
-        
-     # change color of state_list from blue to lighter blue
-    if state_list[i] == 'lightGrey':
-        state_list[i] = 0#'royalblue'
-        
-    # change color of state_list from blue to lighter blue
-    if state_list[i] == 'Gray':
-        state_list[i] = 1#'royalblue'
-        
     
-
-    if EcoRV_timing_sl == 1 and EcoRV_timing_sm == 1 and EcoRV_timing == 1:
-         timing = 5
-    elif EcoRV_timing_sm == 1 and EcoRV_timing == 1:
-         timing = 4
-    elif EcoRV_timing == 1:
-         timing = 3
-    else:
-        timing = state_list[i]
+    b = [b_s, b_m, b_l]
+    print(b)
     
+    b_value_list.append(b)
 
-    Timing.append(timing)
-       
-    
-
-    if timing == 5 and state_list[i]==1:
-        # if cenH_timing == 1:
-        #    criteria = 'black'
-        #else:
-           criteria = 5#'red'
-    elif timing == 4 and state_list[i]==1:
-        # if cenH_timing == 1:
-        #    criteria = 'black'
-        #else:
-           criteria = 4#'red'
-    elif timing == 3 and state_list[i]==1:
-        # if cenH_timing == 1:
-        #    criteria = 'black'
-        #else:
-           criteria = 3#'springgreen'
-    elif timing == 3 and state_list[i]==0:
-        # if cenH_timing == 1:
-        #    criteria = 'black'
-        # else:
-           criteria = 3#'springgreen'
-    else:
-        criteria = timing
-        
-    all_criteria.append(criteria)
-
-
-
-# save Timing list
-with open('Timing_AtoU_S250.txt', 'wb') as F:
-    pickle.dump(Timing, F)
-    
     
 # save Timing list
-with open('all_criteria_AtoU_S250.txt', 'wb') as F:
-    pickle.dump(all_criteria, F)
-    
-# save Timing list
-with open('Differences_AtoU_S250.txt', 'wb') as F:
-    pickle.dump(Differences, F)
-    
-# save Timing list
-with open('b_list_AtoU_S250.txt', 'wb') as F:
+with open('b_list_S250_atf1_AtoU_direct1.txt', 'wb') as F:
     pickle.dump(b_value_list, F)
     
-
-
+    
+        
