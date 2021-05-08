@@ -23,6 +23,7 @@ time_start = time.time()
 pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
 size = 182
+direct = 2
     
 
 # Generate determin parameter x and y values
@@ -52,23 +53,23 @@ y = np.array(y)
 data_pairs_small = []
 for i in X:
     for j in Y:
-        data_pairs_small.append([i,j,0])
+        data_pairs_small.append([i,j,direct])
 
 
 data_pairs = []
 for i in X:
     for j in Y:
-        data_pairs.append([size,i,j,0])
+        data_pairs.append([size,i,j,direct,0])
         
 data_pairs_sm = []
 for i in X:
     for j in Y:
-        data_pairs_sm.append([size,i,j,1])
+        data_pairs_sm.append([size,i,j,direct,1])
         
 data_pairs_sl = []
 for i in X:
     for j in Y:
-        data_pairs_sl.append([size,i,j,2])
+        data_pairs_sl.append([size,i,j,direct,2])
         
 # data_pairs_l = []
 # for i in X:
@@ -80,7 +81,7 @@ state_list = pool.map(ss, data_pairs_small)
 
 
 
-with open('state_ss_atf1_AtoU_direct1.txt', 'wb') as F:
+with open('state_ss_atf1_AtoU_direct2.txt', 'wb') as F:
       pickle.dump(state_list, F)   
 
 
@@ -265,7 +266,7 @@ for i in range(len(data_pairs)):
 
     
 # save Timing list
-with open('b_list_S250_atf1_AtoU_direct1.txt', 'wb') as F:
+with open('b_list_S250_atf1_AtoU_direct2.txt', 'wb') as F:
     pickle.dump(b_value_list, F)
     
     

@@ -25,9 +25,9 @@ def simple_small(X_Y):
     X = X_Y[0]
     Y = X_Y[1]
     
-    global_mode = X_Y[2]
+    global_mode = 0
     
-    direct = 1
+    direct = X_Y[2]
     
     
     # local recruitment-rate M-catalysed change of U to M (recruited conversion)
@@ -113,6 +113,6 @@ def simple_small(X_Y):
 
 # import time
 # t1 = time.time()
-# simple_small([50, 95, 0])
+# simple_small([50, 95, 2])
 # print(time.time() - t1)
 
