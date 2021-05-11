@@ -19,11 +19,11 @@ pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
 
 
-X_Y_atf1_on=[[153,50,120,0]] #X_Y_atf1_on=[[182,49,130,0]]
-X_Y_atf1_off=[[153,50,120,1]] #X_Y_atf1_off=[[182,49,130,1]]
-X_Y_atf1_BS1_on=[[153,50,120,2]] #X_Y_atf1_off=[[182,49,130,1]]
-#X_Y_atf1_on_AE28=[[153,50,120,3]] #X_Y_atf1_off=[[182,49,130,1]]
-X_Y_atf1_on_AE28=[[153,50,120,4]] #X_Y_atf1_off=[[182,49,130,1]]
+X_Y_atf1_on=[[182,60,80,1,0]] #X_Y_atf1_on=[[182,49,130,0]]
+X_Y_atf1_off=[[182,60,80,1,1]] #X_Y_atf1_off=[[182,49,130,1]]
+X_Y_atf1_BS1_on=[[182,60,80,1,2]] #X_Y_atf1_off=[[182,49,130,1]]
+X_Y_atf1_on_AE28=[[182,60,80,1,3]] #X_Y_atf1_off=[[182,49,130,1]]
+#X_Y_atf1_on_AE28=[[153,50,120,4]] #X_Y_atf1_off=[[182,49,130,1]]
 
 
 reps=10000
@@ -323,75 +323,76 @@ EcoRV_total_max = (sum(EcoRV_list_max))/reps
 
 
 
-# # save state_list
-# with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_small, F)
-    
-# # save state_list
-# with open('AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_m, F)
-    
-# # save state_list
-# with open('AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_all.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_l, F)
-    
-# # save state_list
-# with open('AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
-#     pickle.dump(EcoRV_total_max, F)
-    
-
-# # save state_list
-# with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
-#     pickle.dump(cenH_total_small, F)
-    
-# # save state_list
-# with open('cenH_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
-#     pickle.dump(cenH_total_m, F)
-    
-# # save state_list
-# with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos122)_S250_all.txt', 'wb') as F:
-#     pickle.dump(cenH_total_l, F)
-    
-# # save state_list
-# with open('cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos92_pos132)_S250_all.txt', 'wb') as F:
-#     pickle.dump(cenH_total_max, F)
-    
-    
-
-
 # save state_list
-with open('wt_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos92_pos102)_S250_all.txt', 'wb') as F:
+with open('AtoU_Atf1_on_AtoU_60_UtoM_80_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
     pickle.dump(EcoRV_total_small, F)
     
 # save state_list
-with open('wt_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
+with open('AtoU_Atf1_off_AtoU_60_UtoM_80_both_deleted_S250_all.txt', 'wb') as F:
     pickle.dump(EcoRV_total_m, F)
     
 # save state_list
-with open('wt_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos92)_S250_all.txt', 'wb') as F:
+with open('AtoU_Atf1_on_AtoU_60_UtoM_80_one_present_(pos132)_S250_all.txt', 'wb') as F:
     pickle.dump(EcoRV_total_l, F)
     
 # save state_list
-with open('wt_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos102)_S250_all.txt', 'wb') as F:
+with open('AtoU_Atf1_on_AtoU_60_UtoM_80_one_present_(pos122)_S250_all.txt', 'wb') as F:
     pickle.dump(EcoRV_total_max, F)
     
-    
+
 
 # save state_list
-with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos92_pos102)_S250_all.txt', 'wb') as F:
+with open('cenH_AtoU_Atf1_on_AtoU_60_UtoM_80_both_present(pos122_pos132)_S250_all.txt', 'wb') as F:
     pickle.dump(cenH_total_small, F)
     
 # save state_list
-with open('wt_cenH_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
+with open('cenH_AtoU_Atf1_off_AtoU_60_UtoM_80_both_deleted_S250_all.txt', 'wb') as F:
     pickle.dump(cenH_total_m, F)
     
 # save state_list
-with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos92)_S250_all.txt', 'wb') as F:
+with open('cenH_AtoU_Atf1_on_AtoU_60_UtoM_80_one_present_(pos132)_S250_all.txt', 'wb') as F:
     pickle.dump(cenH_total_l, F)
     
 # save state_list
-with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos102)_S250_all.txt', 'wb') as F:
+with open('cenH_AtoU_Atf1_on_AtoU_60_UtoM_80_one_present_(pos122)_S250_all.txt', 'wb') as F:
     pickle.dump(cenH_total_max, F)
+    
+    
+
+
+# # save state_list
+# with open('wt_AtoU_Atf1_on_AtoU_60_UtoM_80_both_present(pos92_pos102)_S250_all.txt', 'wb') as F:
+#     pickle.dump(EcoRV_total_small, F)
+    
+# # save state_list
+# with open('wt_AtoU_Atf1_off_AtoU_60_UtoM_80_both_eleted_S250_all.txt', 'wb') as F:
+#     pickle.dump(EcoRV_total_m, F)
+    
+# # save state_list
+# with open('wt_AtoU_Atf1_on_AtoU_60_UtoM_80_one_deleted(pos92)_S250_all.txt', 'wb') as F:
+#     pickle.dump(EcoRV_total_l, F)
+    
+# # save state_list
+# with open('wt_AtoU_Atf1_on_AtoU_60_UtoM_80_one_deleted(pos102)_S250_all.txt', 'wb') as F:
+#     pickle.dump(EcoRV_total_max, F)
+    
+    
+
+# # save state_list
+# with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_both_present(pos92_pos102)_S250_all.txt', 'wb') as F:
+#     pickle.dump(cenH_total_small, F)
+    
+# # save state_list
+# with open('wt_cenH_AtoU_Atf1_off_AtoU_50_UtoM_120_both_eleted_S250_all.txt', 'wb') as F:
+#     pickle.dump(cenH_total_m, F)
+    
+# # save state_list
+# with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos92)_S250_all.txt', 'wb') as F:
+#     pickle.dump(cenH_total_l, F)
+    
+# # save state_list
+# with open('wt_cenH_AtoU_Atf1_on_AtoU_50_UtoM_120_one_deleted(pos102)_S250_all.txt', 'wb') as F:
+#     pickle.dump(cenH_total_max, F)
     
 
 
@@ -417,7 +418,7 @@ ax1.set_ylim([0.001,1])
 ax1.set_xlim([1,200])
 ax1.legend(fontsize='25')
 
-plt.savefig("wt_AtoU_S250_all_100_atf1_pos92_pos102.pdf")
+plt.savefig("27.5_AtoU_S250_AtoU_60_UtoS_80.pdf")
     
 
 # #fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=((36, 12)))
