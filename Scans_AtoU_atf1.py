@@ -23,7 +23,7 @@ time_start = time.time()
 pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
 size = 182
-direct = 1
+direct = 2
     
 
 # Generate determin parameter x and y values
@@ -81,7 +81,7 @@ state_list = pool.map(ss, data_pairs_small)
 
 
 
-with open('state_ss_atf1_AtoU_direct1.txt', 'wb') as F:
+with open('state_ss_atf1_AtoU_direct2.txt', 'wb') as F:
       pickle.dump(state_list, F)   
 
 
