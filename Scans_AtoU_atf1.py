@@ -81,7 +81,7 @@ state_list = pool.map(ss, data_pairs_small)
 
 
 
-with open('state_ss_atf1_AtoU_direct3.txt', 'wb') as F:
+with open('state_ss_atf1_AtoU_direct1.txt', 'wb') as F:
       pickle.dump(state_list, F)   
 
 
@@ -266,7 +266,7 @@ for i in range(len(data_pairs)):
 
     
 # save Timing list
-with open('b_list_S250_atf1_AtoU_direct3.txt', 'wb') as F:
+with open('b_list_S250_atf1_AtoU_direct1.txt', 'wb') as F:
     pickle.dump(b_value_list, F)
     
     
