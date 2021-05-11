@@ -418,7 +418,7 @@ ax1.set_ylim([0.001,1])
 ax1.set_xlim([1,200])
 ax1.legend(fontsize='25')
 
-plt.savefig("27.5_AtoU_S250_AtoU_60_UtoS_80.pdf")
+plt.savefig("27.5_AtoU_S250_AtoU_60_UtoS_80_new.pdf")
     
 
 # #fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=((36, 12)))
