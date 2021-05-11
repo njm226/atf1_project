@@ -23,7 +23,7 @@ time_start = time.time()
 pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
 size = 182
-direct = 3
+direct = 1
     
 
 # Generate determin parameter x and y values
