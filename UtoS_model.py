@@ -37,7 +37,7 @@ def simple(X_Y):
    
     print(X_Y)
     
-    direct = 1
+    direct = X_Y[3]
     
     
     # local recruitment-rate M-catalysed change of U to M (recruited conversion)
@@ -59,7 +59,7 @@ def simple(X_Y):
     # spontaneous conversion-rate in cenH region (only A to U)
     beta5 = 40*len(mt_region)#13.5*len(mt_region)#15*len(mt_region)#13.5 for SAU
     #
-    atf1 = X_Y[3]
+    atf1 = X_Y[4]
     if atf1 == 0:
     
         beta6 = 300*len(mt_region)
@@ -157,6 +157,6 @@ def simple(X_Y):
 #     import time
 #     #import cProfile
 #     t1 = time.time()
-#     simple([182, 100, 100, 0])
+#     simple([182, 100, 100, 1, 0])
 #     print(time.time() - t1)
 
