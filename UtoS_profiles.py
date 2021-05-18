@@ -9,15 +9,15 @@ histogramm and timecourse data
 
 import numpy as np
 #import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #from smaller_model_function_AtoU import simple_small as ss
 from UtoS_model import simple as ss
 import multiprocessing
 #import time
 import pickle
-from scipy.optimize import curve_fit
-import uncertainties as unc
-import uncertainties.unumpy as unp
+# from scipy.optimize import curve_fit
+# import uncertainties as unc
+# import uncertainties.unumpy as unp
 pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
 
