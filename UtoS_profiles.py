@@ -131,10 +131,10 @@ for p in parameters:
             EcoRV_list_atf1_BS2_on_wt[elt]=EcoRV_atf1_BS2_on_wt
             
             
-            print(cenH_atf1_on_wt)
-            print(cenH_atf1_off_wt)
-            print(cenH_atf1_BS1_on_wt)
-            print(cenH_atf1_BS2_on_wt)
+            # print(cenH_atf1_on_wt)
+            # print(cenH_atf1_off_wt)
+            # print(cenH_atf1_BS1_on_wt)
+            # print(cenH_atf1_BS2_on_wt)
 
         
         #output
@@ -288,10 +288,10 @@ for p in parameters:
             EcoRV_list_atf1_BS2_on[elt]=EcoRV_atf1_BS2_on
             
             
-            print(cenH_atf1_on)
-            print(cenH_atf1_off)
-            print(cenH_atf1_BS1_on)
-            print(cenH_atf1_BS2_on)
+            # print(cenH_atf1_on)
+            # print(cenH_atf1_off)
+            # print(cenH_atf1_BS1_on)
+            # print(cenH_atf1_BS2_on)
 
         
         #output
@@ -335,7 +335,7 @@ for p in parameters:
             pickle.dump(EcoRV_total, F)
 
 
-
+        print(p)
         print(time.time()-t1)
 
 
