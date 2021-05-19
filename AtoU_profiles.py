@@ -21,8 +21,7 @@ import pickle
 pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
 
-#parameters = [[100,100,1],[80,130,1],[70,150,1],[60,180,1],[170,60,2],[100,90,2],[90,100,2],[70,130,2],[60,160,2],[50,190,2],[40,190,5],[50,150,5],[80,90,5],[90,80,5],[120,60,5],[150,50,5]]
-parameters = [[190,50,3],[120,70,3],[90,90,3],[70,120,3],[60,140,3],[50,170,3],[160,50,4],[130,60,4],[110,70,4],[80,100,4],[70,110,4],[60,130,4],[50,160,4],[40,200,4]]
+parameters = [[190,40,1],[40,180,1],[50,130,1],[60,80,1],[20,90,1],[40,150,2],[50,100,2],[70,40,2],[10,100,2],[30,200,3],[30,190,3],[40,130,3],[50,80,3],[30,170,4],[40,110,4],[50,50,4],[30,150,5],[40,100,5],[50,70,5],[100,10,5]]
 reps=10000
 duration=201
 t1 = time.time()
@@ -170,12 +169,12 @@ for p in parameters:
         
         
         # save state_list
-        with open('wt_cenH_Atf1_S40_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
+        with open('gAtoU_wt_cenH_Atf1_S40_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
             pickle.dump(cenH_total_wt, F)
             
         
         # save state_list
-        with open('wt_EcoRV_Atf1_S40_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
+        with open('gAtoU_wt_EcoRV_Atf1_S40_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
             pickle.dump(EcoRV_total_wt, F)
             
             
@@ -327,12 +326,12 @@ for p in parameters:
         
         
         # save state_list
-        with open('cenH_Atf1_S40_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
+        with open('gAtoU_cenH_Atf1_S40_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
             pickle.dump(cenH_total, F)
             
         
         # save state_list
-        with open('EcoRV_Atf1_S40_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
+        with open('gAtoU_EcoRV_Atf1_S40_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
             pickle.dump(EcoRV_total, F)
 
 
