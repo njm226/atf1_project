@@ -172,7 +172,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
             nuc_conv = mt_region[pos_conv]
             
             if nuc_conv == 0:
-                mt_region[pos_conv]=1
+                mt_region[pos_conv]=1 
                 
                 
         # if the spontaneous conversion-rate (direct conversion of U to A) is chosen

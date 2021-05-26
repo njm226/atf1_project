@@ -55,11 +55,11 @@ def t_loop(double duration, int[:] mt_region, int[:] positions, double[:] rates,
     switched = 0
     while T <= duration:
         
-        if T >= duration/2 and switched == 0:
-            switched = 1
-            #cdef int[:] mt_region = np.zeros(70, dtype=np.int32)
-            mt_region = np.ones(76, dtype=np.int32)*2
-#        
+#         if T >= duration/2 and switched == 0:
+#             switched = 1
+#             #cdef int[:] mt_region = np.zeros(70, dtype=np.int32)
+#             mt_region = np.ones(76, dtype=np.int32)*2
+# #        
         j += 1
         # if running out of numbers, generate new ones and set counter to zero again
         if j >= n:

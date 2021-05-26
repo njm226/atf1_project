@@ -8,11 +8,11 @@ import importlib
 importlib.reload(smaller_AtoU)
 from smaller_AtoU import t_loop
 #import pandas as pd
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 def simple_small(X_Y):
     #mating type region (array of 140 nucleosomes)
-    mt_region = np.ones(76, dtype=np.int32)*0
+    mt_region = np.ones(76, dtype=np.int32)*1
     #indices of the mt_region corresponding to positions of nucleosomes
     positions = np.arange(len(mt_region), dtype=np.int32)
 
@@ -33,9 +33,9 @@ def simple_small(X_Y):
     # local recruitment-rate M-catalysed change of U to M (recruited conversion)
     alpha1 = Y*len(mt_region)
     # local recruitment-rate A-catalysed change of M to U (recruited conversion)
-    alpha2 = 100*len(mt_region)
+    alpha2 = 20*len(mt_region)
     # local recruitment-rate A-catalysed change of U to A (recruited conversion)
-    alpha3 = 100*len(mt_region)
+    alpha3 = 20*len(mt_region)
     # global recruitment-rate (recruited conversion of A (0) to U (1))
     alpha4 = X*len(mt_region)
     # spontaneous conversion-rate (direct conversion of A to U)
@@ -48,8 +48,8 @@ def simple_small(X_Y):
     beta4 = direct*len(mt_region)
     # spontaneous conversion-rate in cenH region (only A to U)
     # spontaneous conversion-rate in cenH region (only A to U)
-    beta5 = 250*len(mt_region)
-    beta6 = 250*len(mt_region)
+    beta5 = 40*len(mt_region)
+    beta6 = 40*len(mt_region)
     
     
     
@@ -104,8 +104,8 @@ def simple_small(X_Y):
         
         
     
-    #plt.plot(red)
-    #plt.ylim([0,76])
+    # plt.plot(red)
+    # plt.ylim([0,76])
         
     return(State)
 
@@ -113,6 +113,6 @@ def simple_small(X_Y):
 
 # import time
 # t1 = time.time()
-# simple_small([110, 50, 1])
+# simple_small([30, 160, 5])
 # print(time.time() - t1)
 

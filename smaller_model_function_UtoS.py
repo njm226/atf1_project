@@ -8,16 +8,16 @@ import importlib
 importlib.reload(smaller_UtoS)
 from smaller_UtoS import t_loop
 #import pandas as pd
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 def simple_small(X_Y):
     #mating type region (array of 140 nucleosomes)
-    mt_region = np.ones(76, dtype=np.int32)*0
+    mt_region = np.ones(76, dtype=np.int32)*1
     #indices of the mt_region corresponding to positions of nucleosomes
     positions = np.arange(len(mt_region), dtype=np.int32)
 
     # duration of a simulation
-    duration = 1204#10000#1204#31
+    duration = 10000#1204#10000#1204#31
     
     #cenh region is lacking
 
@@ -104,15 +104,15 @@ def simple_small(X_Y):
         
         
     
-    #plt.plot(red)
-    #plt.ylim([0,76])
+    plt.plot(red)
+    plt.ylim([0,76])
         
     return(State)
 
 
 
-# import time
-# t1 = time.time()
-# simple_small([110, 50, 1,0])
-# print(time.time() - t1)
+import time
+t1 = time.time()
+simple_small([40, 150, 5])
+print(time.time() - t1)
 
