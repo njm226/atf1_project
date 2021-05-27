@@ -23,7 +23,7 @@ time_start = time.time()
 pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
 size = 182
-direct = 0.2
+direct = 0.5
     
 
 # Generate determin parameter x and y values
@@ -33,8 +33,11 @@ direct = 0.2
 #X = [10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200] # list of all global rate S(A->U) values
 #Y = [10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200] #and all local rate S(U->S) values
 
-X = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40] # list of all global rate S(A->U) values
-Y = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40]
+# X = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40] # list of all global rate S(A->U) values
+# Y = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40]
+
+X = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100] # list of all global rate S(A->U) values
+Y = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]
 
 y = Y*len(X) # at the x-axis, the S value range is repeated 10 times
 x = [] # and for the y-axis, each value is repeated 28 times
@@ -77,7 +80,7 @@ state_list = pool.map(ss, data_pairs_small)
 
 
 
-with open('state_ss_atf1_AtoU_direct1_factor5_reduced.txt', 'wb') as F:
+with open('state_ss_atf1_AtoU_direct1_factor2_reduced.txt', 'wb') as F:
       pickle.dump(state_list, F)   
 
 
@@ -262,7 +265,7 @@ for i in range(len(data_pairs)):
 
     
 # save Timing list
-with open('b_list_S250_atf1_AtoU_direct1_factor5_reduced.txt', 'wb') as F:
+with open('b_list_S100_atf1_AtoU_direct1_factor2_reduced.txt', 'wb') as F:
     pickle.dump(b_value_list, F)
     
     
