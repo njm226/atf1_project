@@ -33,9 +33,9 @@ def simple_small(X_Y):
     # local recruitment-rate M-catalysed change of U to M (recruited conversion)
     alpha1 = Y*len(mt_region)
     # local recruitment-rate A-catalysed change of M to U (recruited conversion)
-    alpha2 = 20*len(mt_region)
+    alpha2 = 50*len(mt_region)
     # local recruitment-rate A-catalysed change of U to A (recruited conversion)
-    alpha3 = 20*len(mt_region)
+    alpha3 = 50*len(mt_region)
     # global recruitment-rate (recruited conversion of A (0) to U (1))
     alpha4 = X*len(mt_region)
     # spontaneous conversion-rate (direct conversion of A to U)
@@ -48,8 +48,8 @@ def simple_small(X_Y):
     beta4 = direct*len(mt_region)
     # spontaneous conversion-rate in cenH region (only A to U)
     # spontaneous conversion-rate in cenH region (only A to U)
-    beta5 = 40*len(mt_region)
-    beta6 = 40*len(mt_region)
+    beta5 = 100*len(mt_region)
+    beta6 = 100*len(mt_region)
     
     
     
