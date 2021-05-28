@@ -43,9 +43,9 @@ def simple(X_Y):
     # local recruitment-rate M-catalysed change of U to M (recruited conversion)
     alpha1 = Y*len(mt_region)
     # local recruitment-rate A-catalysed change of M to U (recruited conversion)
-    alpha2 = 50*len(mt_region)
+    alpha2 = 100*len(mt_region)
     # local recruitment-rate A-catalysed change of U to A (recruited conversion)
-    alpha3 = 50*len(mt_region)
+    alpha3 = 100*len(mt_region)
     # global recruitment-rate (recruited conversion of A (0) to U (1))
     alpha4 = X*len(mt_region)
     # spontaneous conversion-rate (direct conversion of A to U)
@@ -57,13 +57,13 @@ def simple(X_Y):
     # spontaneous conversion-rate (direct conversion)
     beta4 = direct*len(mt_region)
     # spontaneous conversion-rate in cenH region (only A to U)
-    beta5 = 100*len(mt_region)#13.5*len(mt_region)#15*len(mt_region)#13.5 for SAU
+    beta5 = 150*len(mt_region)#13.5*len(mt_region)#15*len(mt_region)#13.5 for SAU
     #
     atf1 = X_Y[4]
     if atf1 == 0:
     
-        beta6 = 100*len(mt_region)
-        beta7 = 100*len(mt_region)
+        beta6 = 150*len(mt_region)
+        beta7 = 150*len(mt_region)
         
     elif atf1 == 1:
     
@@ -73,11 +73,11 @@ def simple(X_Y):
     elif atf1 == 2:
     
         beta6 = 0.00001*len(mt_region)
-        beta7 = 100*len(mt_region)
+        beta7 = 150*len(mt_region)
         
     elif atf1 == 3:
     
-        beta6 = 100*len(mt_region)
+        beta6 = 150*len(mt_region)
         beta7 = 0.00001*len(mt_region)
     
     elif atf1 == 4:
