@@ -7,17 +7,17 @@ import smaller_AtoU
 import importlib
 importlib.reload(smaller_AtoU)
 from smaller_AtoU import t_loop
-#import pandas as pd
-#import matplotlib.pyplot as plt
+import pandas as pd
+import matplotlib.pyplot as plt
 
 def simple_small(X_Y):
     #mating type region (array of 140 nucleosomes)
-    mt_region = np.ones(76, dtype=np.int32)*0
+    mt_region = np.ones(76, dtype=np.int32)*1
     #indices of the mt_region corresponding to positions of nucleosomes
     positions = np.arange(len(mt_region), dtype=np.int32)
 
     # duration of a simulation
-    duration = 1204#10000#1204#31
+    duration = 10000#1204#31
     
     #cenh region is lacking
 
@@ -33,9 +33,9 @@ def simple_small(X_Y):
     # local recruitment-rate M-catalysed change of U to M (recruited conversion)
     alpha1 = Y*len(mt_region)
     # local recruitment-rate A-catalysed change of M to U (recruited conversion)
-    alpha2 = 50*len(mt_region)
+    alpha2 = 100*len(mt_region)
     # local recruitment-rate A-catalysed change of U to A (recruited conversion)
-    alpha3 = 50*len(mt_region)
+    alpha3 = 100*len(mt_region)
     # global recruitment-rate (recruited conversion of A (0) to U (1))
     alpha4 = X*len(mt_region)
     # spontaneous conversion-rate (direct conversion of A to U)
@@ -48,8 +48,8 @@ def simple_small(X_Y):
     beta4 = direct*len(mt_region)
     # spontaneous conversion-rate in cenH region (only A to U)
     # spontaneous conversion-rate in cenH region (only A to U)
-    beta5 = 100*len(mt_region)
-    beta6 = 100*len(mt_region)
+    beta5 = 250*len(mt_region)
+    beta6 = 250*len(mt_region)
     
     
     
@@ -104,15 +104,15 @@ def simple_small(X_Y):
         
         
     
-    # plt.plot(red)
-    # plt.ylim([0,76])
+    plt.plot(red)
+    plt.ylim([0,76])
         
     return(State)
 
 
 
-# import time
-# t1 = time.time()
-# simple_small([8, 22, 1])
-# print(time.time() - t1)
+import time
+t1 = time.time()
+simple_small([30, 160, 5])
+print(time.time() - t1)
 
