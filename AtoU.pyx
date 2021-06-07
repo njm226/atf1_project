@@ -432,7 +432,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
             
             
         # after each generation, half f the nucleosomes are exchanged with us
-        if t >=1:
+        if t >=1: 
             t=0
             
             # colorcode the nucleosomes and store them in states vector

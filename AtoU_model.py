@@ -162,6 +162,6 @@ def simple(X_Y):
 #     import time
 #     #import cProfile
 #     t1 = time.time()
-#     simple([182, 8, 36, 0.2, 1])
+#     simple([182, 40, 180, 1, 4])
 #     print(time.time() - t1)
 
