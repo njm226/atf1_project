@@ -40,7 +40,7 @@ for p in parameters:
         
         #all 27.5 kb region!!
         
-        X_Y_atf1_on=[[182,p[0],p[1],p[2],0]] #X_Y_atf1_on=[[182,49,130,0]]
+        X_Y_atf1_on=[[153,p[0],p[1],p[2],0]] #X_Y_atf1_on=[[182,49,130,0]]
 
         
         
