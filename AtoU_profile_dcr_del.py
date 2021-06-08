@@ -94,12 +94,12 @@ for p in parameters:
         
         
         # save state_list
-        with open('gAtoU_dcr_del_cenH_Atf1_60_S130_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
+        with open('gAtoU_dcr_del_reswitch_cenH_Atf1_60_S130_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
             pickle.dump(cenH_total, F)
             
         
         # save state_list
-        with open('gAtoU_dcr_del_EcoRV_Atf1_60_S130_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
+        with open('gAtoU_dcr_del_reswitch_EcoRV_Atf1_60_S130_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
             pickle.dump(EcoRV_total, F)
 
 
