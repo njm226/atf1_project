@@ -82,7 +82,7 @@ def simple(X_Y):
     
     elif atf1 == 4:
         
-        beta5 = 100*len(mt_region)
+        beta5 = 65*len(mt_region)
         beta6 = 250*len(mt_region)
         beta7 = 250*len(mt_region)
     
@@ -162,6 +162,6 @@ def simple(X_Y):
 #     import time
 #     #import cProfile
 #     t1 = time.time()
-#     simple([182, 40, 180, 1, 4])
+#     simple([182, 30, 160, 5, 4])
 #     print(time.time() - t1)
 

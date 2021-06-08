@@ -27,7 +27,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     
     # borders of the cenH region
     cdef int cenHl = 60
-    cdef int cenHr = 91
+    cdef int cenHr = 91 
     
     ##borders of first atf1 region
     #cdef int atf1l = 122
