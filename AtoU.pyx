@@ -18,7 +18,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     cdef double p1 
     cdef double p2
     
-    cdef double time = 0
+    #cdef double time = 0
     
     #sum of all rates
     cdef double total_rate = np.sum(rates)
@@ -63,7 +63,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     
     # silencing_threshold
     cdef int threshold1 = 16
-    cdef int threshold2 = 11
+    cdef int threshold2 = 9
 
     cdef int low_t_index
     cdef int pos_conv
@@ -164,7 +164,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
         # increases time by the length of the 
         T += time_increase
         t += time_increase
-        time += time_increase
+        #time += time_increase
         
 
         # if the spontaneous conversion-rate (direct conversion of A to U) is chosen
@@ -482,16 +482,15 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
             
             S_nucleosomes_cenH.append(cenH_red)
                 
-            if time >= 1:
-                time = 0
-                # the state of the mt_region at this time point is stored 
-                # mt_matrix[m]=mt_region
-                for i in positions:
-                    rand = random.choice([0,1])
-                    if rand == 1:
-                        mt_region[i]=1
-                    
-                 
+            
+            # the state of the mt_region at this time point is stored 
+            # mt_matrix[m]=mt_region
+            for i in positions:
+                rand = random.choice([0,1])
+                if rand == 1:
+                    mt_region[i]=1
+                
+             
     
     
     return  cenH_status_list, EcoRV_status_list, states, S_nucleosomes_cenH, S_nucleosomes, A_nucleosomes, U_nucleosomes
