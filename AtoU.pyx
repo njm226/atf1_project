@@ -18,6 +18,8 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     cdef double p1 
     cdef double p2
     
+    cdef double time = 0
+    
     #sum of all rates
     cdef double total_rate = np.sum(rates)
     # array of the cumulative sums of all rates
@@ -162,6 +164,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
         # increases time by the length of the 
         T += time_increase
         t += time_increase
+        time += time_increase
         
 
         # if the spontaneous conversion-rate (direct conversion of A to U) is chosen
@@ -432,7 +435,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
             
             
         # after each generation, half f the nucleosomes are exchanged with us
-        if t >=1: 
+        if t >=0.01: 
             t=0
             
             # colorcode the nucleosomes and store them in states vector
@@ -463,8 +466,8 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
                 
             if EcoRV_red - EcoRV_blue >= threshold2:
                 EcoRV_silent = 1
-            # else:
-            #     EcoRV_silent = 0 
+            else:
+                EcoRV_silent = 0 
         
                     
             cenH_status_list[int(T)]=cenH_silent
@@ -479,14 +482,15 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
             
             S_nucleosomes_cenH.append(cenH_red)
                 
-            
-            # the state of the mt_region at this time point is stored 
-            # mt_matrix[m]=mt_region
-            for i in positions:
-                rand = random.choice([0,1])
-                if rand == 1:
-                    mt_region[i]=1
-                
+            if time >= 1:
+                time = 0
+                # the state of the mt_region at this time point is stored 
+                # mt_matrix[m]=mt_region
+                for i in positions:
+                    rand = random.choice([0,1])
+                    if rand == 1:
+                        mt_region[i]=1
+                    
                  
     
     
