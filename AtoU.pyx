@@ -63,7 +63,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     
     # silencing_threshold
     cdef int threshold1 = 16
-    cdef int threshold2 = 9
+    cdef int threshold2 = 11
 
     cdef int low_t_index
     cdef int pos_conv
@@ -435,7 +435,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
             
             
         # after each generation, half f the nucleosomes are exchanged with us
-        if t >=0.01: 
+        if t >=1: 
             t=0
             
             # colorcode the nucleosomes and store them in states vector
