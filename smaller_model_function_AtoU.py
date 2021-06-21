@@ -17,7 +17,7 @@ def simple_small(X_Y):
     positions = np.arange(len(mt_region), dtype=np.int32)
 
     # duration of a simulation
-    duration = 10000#1204#31
+    duration = 100000#1204#31
     
     #cenh region is lacking
 
@@ -104,9 +104,13 @@ def simple_small(X_Y):
         
         
     
+    plt.figure()
+    plt.hist(red, color="grey", edgecolor="black", density=True, bins=76)
+    print(red)
+    
+    plt.figure()
     plt.plot(red)
     plt.ylim([0,76])
-        
     return(State)
 
 
