@@ -391,15 +391,15 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
              nuc_conv = mt_region[pos_conv]
                 
              # if the nucleosome is within the special region (cenH) and in state A
-             if pos_conv == 92 and nuc_conv == 1:# and len(mt_region)==153:# and atf1!=3: #   if pos_conv == 92 and
+             if pos_conv == 92 and nuc_conv == 1 and len(mt_region)==153:# and atf1!=3: #   if pos_conv == 92 and
              #if pos_conv==93 and nuc_conv==1:
                  # the state of the nucleosome is changed to U
                      mt_region[pos_conv]=2
                      
-             # elif pos_conv == 122 and nuc_conv == 1 and len(mt_region)==182:# and atf1!=3: #   if pos_conv == 92 and
-             # #if pos_conv==93 and nuc_conv==1:
-             #     # the state of the nucleosome is changed to U
-             #         mt_region[pos_conv]=2
+              elif pos_conv == 122 and nuc_conv == 1 and len(mt_region)==182:# and atf1!=3: #   if pos_conv == 92 and
+              #if pos_conv==93 and nuc_conv==1:
+                  # the state of the nucleosome is changed to U
+                      mt_region[pos_conv]=2
                      
              # elif pos_conv == 93 and nuc_conv == 1 and atf1==3: #   if pos_conv == 92 and
              # #     # the state of the nucleosome is changed to U
@@ -466,8 +466,8 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
                 
             if EcoRV_red - EcoRV_blue >= threshold2:
                 EcoRV_silent = 1
-            # else:
-            #     EcoRV_silent = 0 
+            else:
+                EcoRV_silent = 0 
         
                     
             cenH_status_list[int(T)]=cenH_silent
