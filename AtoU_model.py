@@ -82,7 +82,7 @@ def simple(X_Y):
     
     elif atf1 == 4:
         
-        beta5 = 60*len(mt_region)
+        beta5 = 43.3333333*len(mt_region)
         beta6 = 250*len(mt_region)
         beta7 = 250*len(mt_region)
     
@@ -127,7 +127,7 @@ def simple(X_Y):
     #     ax.tick_params(labelsize='50')
     #     ax.set_title("31 kb system", fontsize ='60')
     
-    ##plt.savefig("timecourse_203_new.pdf")
+    #plt.savefig("timecourse_203_new.pdf")
         
     
     # fig, ax1 = plt.subplots(figsize=(12,5))
@@ -162,6 +162,6 @@ def simple(X_Y):
 #     import time
 #     #import cProfile
 #     t1 = time.time()
-#     simple([182, 30, 160, 5, 4])
+#     simple([153, 30, 160, 5, 4])
 #     print(time.time() - t1)
 
