@@ -189,10 +189,10 @@ for p in parameters:
         
         #all 27.5 kb region!!
         
-        X_Y_atf1_on=[[182,p[0],p[1],p[2],0]] #X_Y_atf1_on=[[182,49,130,0]]
-        X_Y_atf1_off=[[182,p[0],p[1],p[2],1]] #X_Y_atf1_off=[[182,49,130,1]]
-        X_Y_atf1_BS1_on=[[182,p[0],p[1],p[2],2]] #X_Y_atf1_off=[[182,49,130,1]]
-        X_Y_atf1_BS2_on=[[182,p[0],p[1],p[2],3]] #X_Y_atf1_off=[[182,49,130,1]]
+        X_Y_atf1_on=[[153,p[0],p[1],p[2],0]] #X_Y_atf1_on=[[182,49,130,0]]
+        X_Y_atf1_off=[[153,p[0],p[1],p[2],1]] #X_Y_atf1_off=[[182,49,130,1]]
+        X_Y_atf1_BS1_on=[[153,p[0],p[1],p[2],2]] #X_Y_atf1_off=[[182,49,130,1]]
+        X_Y_atf1_BS2_on=[[153,p[0],p[1],p[2],3]] #X_Y_atf1_off=[[182,49,130,1]]
         
         
         
@@ -329,12 +329,12 @@ for p in parameters:
         
         
         # save state_list
-        with open('cenH_Atf1_S20_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
+        with open('wt_cenH_Atf1_S20_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
             pickle.dump(cenH_total, F)
             
         
         # save state_list
-        with open('EcoRV_Atf1_S20_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
+        with open('wt_EcoRV_Atf1_S20_UtoS%5.1f_AtoU%5.1f_direct%5.1f.txt' %tuple(p), 'wb') as F:
             pickle.dump(EcoRV_total, F)
 
 

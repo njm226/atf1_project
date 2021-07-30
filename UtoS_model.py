@@ -6,8 +6,8 @@ from UtoS import t_loop
 import UtoS
 import importlib
 importlib.reload(UtoS)
-#import pandas as pd
-#import matplotlib.pyplot as plt
+# import pandas as pd
+# import matplotlib.pyplot as plt
 
 def simple(X_Y):
     
@@ -57,7 +57,7 @@ def simple(X_Y):
     # spontaneous conversion-rate (direct conversion)
     beta4 = direct*len(mt_region)
     # spontaneous conversion-rate in cenH region (only A to U)
-    beta5 = 40*len(mt_region)#13.5*len(mt_region)#15*len(mt_region)#13.5 for SAU
+    beta5 = 20*len(mt_region)#13.5*len(mt_region)#15*len(mt_region)#13.5 for SAU
     #
     atf1 = X_Y[4]
     if atf1 == 0:
@@ -157,6 +157,6 @@ def simple(X_Y):
 #     import time
 #     #import cProfile
 #     t1 = time.time()
-#     simple([182, 100, 100, 1, 0])
+#     simple([182, 40, 200, 5, 1])
 #     print(time.time() - t1)
 
