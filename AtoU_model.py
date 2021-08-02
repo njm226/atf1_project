@@ -6,8 +6,8 @@ from AtoU import t_loop
 import AtoU
 import importlib
 importlib.reload(AtoU)
-#import pandas as pd
-#import matplotlib.pyplot as plt
+# import pandas as pd
+# import matplotlib.pyplot as plt
 
 def simple(X_Y):
     
@@ -19,7 +19,7 @@ def simple(X_Y):
     positions = np.arange(len(mt_region), dtype=np.int32)
     
 
-    duration = 201#201#15#101#15#101#15#101#15#101#10#61#15
+    duration = 101#201#15#101#15#101#15#101#15#101#10#61#15
     
     
     # rates
@@ -57,7 +57,7 @@ def simple(X_Y):
     # spontaneous conversion-rate (direct conversion)
     beta4 = direct*len(mt_region)
     # spontaneous conversion-rate in cenH region (only A to U)
-    beta5 = 130*len(mt_region)#13.5*len(mt_region)#15*len(mt_region)#13.5 for SAU   #130
+    beta5 = 200*len(mt_region)#13.5*len(mt_region)#15*len(mt_region)#13.5 for SAU   #130
     #
     atf1 = X_Y[4]
     if atf1 == 0:
@@ -162,6 +162,6 @@ def simple(X_Y):
 #     import time
 #     #import cProfile
 #     t1 = time.time()
-#     simple([182, 50, 70, 5, 0])
+#     simple([182, 90, 20, 1, 1])
 #     print(time.time() - t1)
 
