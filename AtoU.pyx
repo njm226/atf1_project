@@ -86,8 +86,8 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     cdef double[:] random_doubles1 = np.random.random(n)
     cdef double[:] random_doubles2 = np.random.random(n)
     cdef double[:] random_doubles3 = np.random.random(n)
-    cdef double[:] random_doubles4 = np.random.random(n)
-    cdef double[:] random_doubles5 = np.random.random(n)
+    # cdef double[:] random_doubles4 = np.random.random(n)
+    # cdef double[:] random_doubles5 = np.random.random(n)
     
     #index for generating new random uniformly distributed numbers if running out of them
 
@@ -112,6 +112,9 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     U_nucleosomes = []
     S_nucleosomes_cenH = []
     switched = 0
+    
+    count = 0
+    count2 = 0
     
     # append the starting nucleosomes
     for nuc in mt_region:
@@ -141,8 +144,8 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
             random_doubles1 = np.random.random(n)
             random_doubles2 = np.random.random(n)
             random_doubles3 = np.random.random(n)
-            random_doubles4 = np.random.random(n)
-            random_doubles5 = np.random.random(n)
+            # random_doubles4 = np.random.random(n)
+            # random_doubles5 = np.random.random(n)
             j = 0
 
         # choses the time of the fastest reaction (equivalent to generating 8 different numbers)
@@ -462,12 +465,18 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
             if cenH_red - cenH_blue >= threshold1:
                 cenH_silent = 1
             else:
-                cenH_silent = 0
+                count += 1
+                if count >=2:
+                    cenH_silent = 0
+                    count = 0
                 
             if EcoRV_red - EcoRV_blue >= threshold2:
                 EcoRV_silent = 1
             else:
-                EcoRV_silent = 0 
+                count2 += 1
+                if count2 >=2:
+                    EcoRV_silent = 0 
+                    count2 =0
         
                     
             cenH_status_list[int(T)]=cenH_silent
