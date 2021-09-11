@@ -202,12 +202,12 @@ for p in parameters:
         repeat_atf1_BS2_on=reps*X_Y_atf1_BS2_on
         
         
-        if __name__ == '__main__':
-            status_atf1_on = pool.map(ss, repeat_atf1_on) 
-            status_atf1_off = pool.map(ss, repeat_atf1_off) 
-            status_atf1_BS1_on = pool.map(ss, repeat_atf1_BS1_on) 
-            status_atf1_BS2_on = pool.map(ss, repeat_atf1_BS2_on) 
-        
+        #if __name__ == '__main__':
+        status_atf1_on = pool.map(ss, repeat_atf1_on) 
+        status_atf1_off = pool.map(ss, repeat_atf1_off) 
+        status_atf1_BS1_on = pool.map(ss, repeat_atf1_BS1_on) 
+        status_atf1_BS2_on = pool.map(ss, repeat_atf1_BS2_on) 
+    
 
         
         
