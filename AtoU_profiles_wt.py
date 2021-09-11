@@ -32,19 +32,20 @@ for p in parameters:
     
         #all wt!!
         
+        
         wt_X_Y_atf1_on=[[153,p[0],p[1],p[2],0]] #X_Y_atf1_on=[[182,49,130,0]]
         wt_X_Y_atf1_off=[[153,p[0],p[1],p[2],1]] #X_Y_atf1_off=[[182,49,130,1]]
         wt_X_Y_atf1_BS1_on=[[153,p[0],p[1],p[2],2]] #X_Y_atf1_off=[[182,49,130,1]]
         wt_X_Y_atf1_BS2_on=[[153,p[0],p[1],p[2],3]] #X_Y_atf1_off=[[182,49,130,1]]
         
         
-        
+        # list with lists (of parameters) as elements (reps elements in total)
         wt_repeat_atf1_on=reps*wt_X_Y_atf1_on
         wt_repeat_atf1_off=reps*wt_X_Y_atf1_off
         wt_repeat_atf1_BS1_on=reps*wt_X_Y_atf1_BS1_on
         wt_repeat_atf1_BS2_on=reps*wt_X_Y_atf1_BS2_on
         
-        
+        # feeds ss function with 10000X the parameters for parallel computing
         if __name__ == '__main__':
             wt_status_atf1_on = pool.map(ss, wt_repeat_atf1_on) 
             wt_status_atf1_off = pool.map(ss, wt_repeat_atf1_off) 
@@ -53,40 +54,34 @@ for p in parameters:
         
 
         
-        
+        # creates arrays with reps X rows and duration X columns
         cenH_list_atf1_on_wt = np.zeros([reps,duration])
         EcoRV_list_atf1_on_wt = np.zeros([reps,duration])
         
         
         
-
-        
-        
         cenH_list_atf1_off_wt = np.zeros([reps,duration])
         EcoRV_list_atf1_off_wt = np.zeros([reps,duration])
-        
-        
 
         
         
         cenH_list_atf1_BS1_on_wt = np.zeros([reps,duration])
         EcoRV_list_atf1_BS1_on_wt = np.zeros([reps,duration])
-        
-        
 
+        
         
         cenH_list_atf1_BS2_on_wt = np.zeros([reps,duration])
         EcoRV_list_atf1_BS2_on_wt = np.zeros([reps,duration])
         
         
         
-        
+        # loops through all cells computed in parallel
         for elt in range(reps):
             
             cenH_atf1_on_wt = np.array(wt_status_atf1_on[elt][0])
             EcoRV_atf1_on_wt = np.array(wt_status_atf1_on[elt][1])
          
-            #switch the values of the list (1 stands now for timepoint when reporter is on)
+            #switch the values of the list (1 stands now for timepoint when reporter is on and 0 when reporter is off)
             cenH_atf1_on_wt=1-cenH_atf1_on_wt
             EcoRV_atf1_on_wt=1-EcoRV_atf1_on_wt
             

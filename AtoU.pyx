@@ -466,7 +466,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
                 cenH_silent = 1
             else:
                 count += 1
-                if count >=2:
+                if count >=4:
                     cenH_silent = 0
                     count = 0
                 
@@ -474,7 +474,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
                 EcoRV_silent = 1
             else:
                 count2 += 1
-                if count2 >=2:
+                if count2 >=4:
                     EcoRV_silent = 0 
                     count2 =0
         
