@@ -26,7 +26,7 @@ pool = multiprocessing.Pool(multiprocessing.cpu_count())
 #parameters = [[40,180,1]]
 parameters = [[30,160,5]]
 #parameters = [[20,90,0.5],[40,20,0.5],[20,70,1],[40,15,1],[15,95,1.5],[35,20,1.5]]
-reps=1000
+reps=100
 duration=201
 t1 = time.time()
 for p in parameters:
@@ -42,28 +42,27 @@ for p in parameters:
         
         #if __name__ == '__main__':
         status_atf1_on = pool.map(ss, repeat_atf1_on) 
-    
 
         
         
-        cenH_list_atf1_on = np.zeros([reps+1,duration])
-        EcoRV_list_atf1_on = np.zeros([reps+1,duration])
+        cenH_list_atf1_on = np.zeros([reps,duration])
+        EcoRV_list_atf1_on = np.zeros([reps,duration])
         
         
-        
+        status_atf1_on = np.array(status_atf1_on)
         
         
         
         for elt in range(reps):
             
-            # c,E = ss(X_Y_atf1_on)
+        #     # c,E = ss(X_Y_atf1_on)
             
             
-            # E = np.array(E)
-            # E= 1-E
-            # EcoRV_list_atf1_on[elt]=E
+        #     # E = np.array(E)
+        #     # E= 1-E
+        #     # EcoRV_list_atf1_on[elt]=E
             
-            
+
             cenH_atf1_on = np.array(status_atf1_on[elt][0])
             EcoRV_atf1_on = np.array(status_atf1_on[elt][1])
          
@@ -75,7 +74,7 @@ for p in parameters:
             EcoRV_list_atf1_on[elt]=EcoRV_atf1_on
             
         
-            
+        print(status_atf1_on)
             
         
         # #output
@@ -89,7 +88,7 @@ for p in parameters:
         #     pickle.dump(EcoRV_list_atf1_on, F)
             
         np.save("sample_matrix2.npy", EcoRV_list_atf1_on)
-            
+        #np.save("sample_matrix2.npy", status_atf1_on)
         
 
         print(p)

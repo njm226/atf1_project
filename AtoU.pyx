@@ -10,6 +10,9 @@ from libc.math cimport log
 @cython.cdivision(True)
 def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, int SAU, int atf1):
     
+    # Very important function to create new random numbers for this cell to avoid dependencies!!!!
+    np.random.seed()
+    
     # total time (in units of generations)
     cdef double T = 0
     # time (set to 0 again after cell devides)
