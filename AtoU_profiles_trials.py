@@ -76,9 +76,11 @@ for p in parameters:
         # EcoRV_total_atf1_on = (sum(EcoRV_list_atf1_on))/reps
         
         
-        # save state_list
-        with open('sample_matrix.txt' %tuple(p), 'wb') as F:
-            pickle.dump(EcoRV_list_atf1_on, F)
+        # # save state_list
+        # with open('sample_matrix.txt' %tuple(p), 'wb') as F:
+        #     pickle.dump(EcoRV_list_atf1_on, F)
+            
+        np.save("sample_matrix.npy", EcoRV_list_atf1_on)
             
         
 
