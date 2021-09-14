@@ -46,8 +46,8 @@ for p in parameters:
 
         
         
-        cenH_list_atf1_on = np.zeros([reps,duration])
-        EcoRV_list_atf1_on = np.zeros([reps,duration])
+        cenH_list_atf1_on = np.zeros([reps+1,duration])
+        EcoRV_list_atf1_on = np.zeros([reps+1,duration])
         
         
         
@@ -55,6 +55,14 @@ for p in parameters:
         
         
         for elt in range(reps):
+            
+            # c,E = ss(X_Y_atf1_on)
+            
+            
+            # E = np.array(E)
+            # E= 1-E
+            # EcoRV_list_atf1_on[elt]=E
+            
             
             cenH_atf1_on = np.array(status_atf1_on[elt][0])
             EcoRV_atf1_on = np.array(status_atf1_on[elt][1])
@@ -80,7 +88,7 @@ for p in parameters:
         # with open('sample_matrix.txt' %tuple(p), 'wb') as F:
         #     pickle.dump(EcoRV_list_atf1_on, F)
             
-        np.save("sample_matrix.npy", EcoRV_list_atf1_on)
+        np.save("sample_matrix2.npy", EcoRV_list_atf1_on)
             
         
 
