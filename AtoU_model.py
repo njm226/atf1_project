@@ -82,7 +82,7 @@ def simple(X_Y):
     
     elif atf1 == 4:
         
-        beta5 = 125*len(mt_region)
+        beta5 = 115*len(mt_region)
         beta6 = 250*len(mt_region)
         beta7 = 250*len(mt_region)
     
