@@ -118,6 +118,6 @@ def simple_small(X_Y):
 
 import time
 t1 = time.time()
-simple_small([30, 160, 5])
+simple_small([30, 160, 4])
 print(time.time() - t1)
 
