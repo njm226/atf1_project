@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 def simple_small(X_Y):
     #mating type region (array of 140 nucleosomes)
-    mt_region = np.ones(76, dtype=np.int32)*1
+    mt_region = np.ones(76, dtype=np.int32)*0
     #indices of the mt_region corresponding to positions of nucleosomes
     positions = np.arange(len(mt_region), dtype=np.int32)
 
@@ -118,6 +118,7 @@ def simple_small(X_Y):
 
 import time
 t1 = time.time()
-simple_small([30, 160, 4])
+#simple_small([30, 160, 4])
+simple_small([40, 180, 1])
 print(time.time() - t1)
 

@@ -125,7 +125,7 @@ def simple(X_Y):
     #     #ax.set_ylabel('Time (cell generations)', fontsize = 20)
     #     #ax.set_xlabel('Nucleosomes', fontsize = 20)
     #     ax.tick_params(labelsize='50')
-    #     ax.set_title("31 kb system", fontsize ='60')
+    #     ax.set_title("23 kb system", fontsize ='60')
     
     #plt.savefig("timecourse_203_new.pdf")
         
@@ -162,6 +162,6 @@ def simple(X_Y):
 #     import time
 #     #import cProfile
 #     t1 = time.time()
-#     simple([182, 90, 20, 1, 1])
+#     simple([182, 40, 180, 1, 4])
 #     print(time.time() - t1)
 
