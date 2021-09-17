@@ -27,6 +27,7 @@ pool = multiprocessing.Pool(multiprocessing.cpu_count())
 #parameters = [[30,160,5]]
 #parameters = [[50,70,5]]
 #parameters = [[40,110,4]]
+parameters = [[40,130,3]]
 #parameters = [[20,90,0.5],[40,20,0.5],[20,70,1],[40,15,1],[15,95,1.5],[35,20,1.5]]
 reps=10000
 duration=201
