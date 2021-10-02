@@ -65,7 +65,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
         
     
     # silencing_threshold
-    cdef int threshold1 = 16#21#16
+    cdef int threshold1 = 21#16
     cdef int threshold2 = 6#9
 
     cdef int low_t_index
