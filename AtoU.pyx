@@ -41,31 +41,32 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     ##borders of second atf1 region
     #cdef int atf2l = 132
     #cdef int atf2r = 133
+    N=len(mt_region)
     
-    if len(mt_region)==153:
+    if N==153:
        
         # borders of the reporter (EcoRV) located outside cenH
         EcoRVl = 118
         EcoRVr = 132
         
-    elif len(mt_region)==182:
+    elif N==182:
         # borders of the reporter (EcoRV) located outside cenH
         EcoRVl = 147
         EcoRVr = 161
         
-    elif len(mt_region)==191:
+    elif N==191:
         # borders of the reporter (EcoRV) located outside cenH
         EcoRVl = 156
         EcoRVr = 170
         
-    elif len(mt_region)==203:
+    elif N==203:
         # borders of the reporter (EcoRV) located outside cenH
         EcoRVl = 168
         EcoRVr = 182
         
     
     # silencing_threshold
-    cdef int threshold1 = 21#16
+    cdef int threshold1 = 16#21
     cdef int threshold2 = 6#9
 
     cdef int low_t_index
@@ -397,7 +398,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
              nuc_conv = mt_region[pos_conv]
                 
              # if the nucleosome is within the special region (cenH) and in state A
-             if pos_conv == 92 and nuc_conv == 1:# and len(mt_region)==153:# and atf1!=3: #   if pos_conv == 92 and
+             if pos_conv == 89 and nuc_conv == 1:# pos_conv == 92
              #if pos_conv==93 and nuc_conv==1:
                  # the state of the nucleosome is changed to U
                      mt_region[pos_conv]=2
@@ -419,22 +420,22 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
              # the nucleosome at that posion is selected
              nuc_conv = mt_region[pos_conv]
                     
-             if pos_conv == 102 and nuc_conv == 1 and len(mt_region)==153: #   elif pos_conv == 93
+             if pos_conv == 102 and nuc_conv == 1 and N==153: #   elif pos_conv == 93
              #if pos_conv==103 and nuc_conv==1:
                  # the state of the nucleosome is changed to U
                      mt_region[pos_conv]=2
             
-             elif pos_conv == 132 and nuc_conv == 1 and len(mt_region)==182: #   elif pos_conv == 93
+             elif pos_conv == 132 and nuc_conv == 1 and N==182: #   elif pos_conv == 93
              #if pos_conv==103 and nuc_conv==1:
                  # the state of the nucleosome is changed to U
                      mt_region[pos_conv]=2
             
-             elif pos_conv == 141 and nuc_conv == 1 and len(mt_region)==191: #   elif pos_conv == 93
+             elif pos_conv == 141 and nuc_conv == 1 and N==191: #   elif pos_conv == 93
              #if pos_conv==103 and nuc_conv==1:
                  # the state of the nucleosome is changed to U
                      mt_region[pos_conv]=2
                      
-             elif pos_conv == 153 and nuc_conv == 1 and len(mt_region)==203: #   elif pos_conv == 93
+             elif pos_conv == 153 and nuc_conv == 1 and N==203: #   elif pos_conv == 93
              #if pos_conv==103 and nuc_conv==1:
                  # the state of the nucleosome is changed to U
                      mt_region[pos_conv]=2
