@@ -19,8 +19,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     cdef double t = 0
     # duration of a simulation
     cdef double p1 
-    cdef double p2
-    
+    cdef double p2 
     #cdef double time = 0
     
     #sum of all rates
@@ -423,7 +422,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
                  # the state of the nucleosome is changed to U
                      mt_region[pos_conv]=2
             
-             elif pos_conv == 132 and nuc_conv == 1 and N==182: #   elif pos_conv == 93
+             elif pos_conv == 152 and nuc_conv == 1 and N==182: #   elif pos_conv == 93
              #if pos_conv==103 and nuc_conv==1:
                  # the state of the nucleosome is changed to U
                      mt_region[pos_conv]=2

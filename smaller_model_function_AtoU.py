@@ -48,8 +48,8 @@ def simple_small(X_Y):
     beta4 = direct*len(mt_region)
     # spontaneous conversion-rate in cenH region (only A to U)
     # spontaneous conversion-rate in cenH region (only A to U)
-    beta5 = 250*len(mt_region)
-    beta6 = 250*len(mt_region)
+    beta5 = 400*len(mt_region)
+    beta6 = 100*len(mt_region)
     
     
     
