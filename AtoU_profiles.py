@@ -333,12 +333,12 @@ for p in parameters:
         
         
         # save state_list
-        with open('27kb_cenH_threshold_5.txt', 'wb') as F:
+        with open('27kb_cenH_threshold_10.txt', 'wb') as F:
             pickle.dump(cenH_total, F)
             
         
         # save state_list
-        with open('27kb_EcoRV_threshold_5.txt', 'wb') as F:
+        with open('27kb_EcoRV_threshold_4.txt', 'wb') as F:
             pickle.dump(EcoRV_total, F)
 
 
