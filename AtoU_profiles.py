@@ -208,9 +208,9 @@ for p in parameters:
         
         #if __name__ == '__main__':
         status_atf1_on = pool.map(ss, repeat_atf1_on) 
-        # status_atf1_off = pool.map(ss, repeat_atf1_off) 
-        # status_atf1_BS1_on = pool.map(ss, repeat_atf1_BS1_on) 
-        # status_atf1_BS2_on = pool.map(ss, repeat_atf1_BS2_on) 
+        status_atf1_off = pool.map(ss, repeat_atf1_off) 
+        status_atf1_BS1_on = pool.map(ss, repeat_atf1_BS1_on) 
+        status_atf1_BS2_on = pool.map(ss, repeat_atf1_BS2_on) 
     
 
         
@@ -257,42 +257,42 @@ for p in parameters:
         
             
             
-            # cenH_atf1_off = np.array(status_atf1_off[elt][0])
-            # EcoRV_atf1_off = np.array(status_atf1_off[elt][1])
+            cenH_atf1_off = np.array(status_atf1_off[elt][0])
+            EcoRV_atf1_off = np.array(status_atf1_off[elt][1])
 
-            # #switch the values of the list (1 stands now for timepoint when reporter is on)
-            # cenH_atf1_off=1-cenH_atf1_off
-            # EcoRV_atf1_off=1-EcoRV_atf1_off
+            #switch the values of the list (1 stands now for timepoint when reporter is on)
+            cenH_atf1_off=1-cenH_atf1_off
+            EcoRV_atf1_off=1-EcoRV_atf1_off
             
-            # cenH_list_atf1_off[elt]=cenH_atf1_off
-            # EcoRV_list_atf1_off[elt]=EcoRV_atf1_off
-            
-            
-            
-            
-            # cenH_atf1_BS1_on = np.array(status_atf1_BS1_on[elt][0])
-            # EcoRV_atf1_BS1_on = np.array(status_atf1_BS1_on[elt][1])
-            
-            # #switch the values of the list (1 stands now for timepoint when reporter is on)
-            # cenH_atf1_BS1_on=1-cenH_atf1_BS1_on
-            # EcoRV_atf1_BS1_on=1-EcoRV_atf1_BS1_on
-            
-            # cenH_list_atf1_BS1_on[elt]=cenH_atf1_BS1_on
-            # EcoRV_list_atf1_BS1_on[elt]=EcoRV_atf1_BS1_on
+            cenH_list_atf1_off[elt]=cenH_atf1_off
+            EcoRV_list_atf1_off[elt]=EcoRV_atf1_off
             
             
             
             
-            # cenH_atf1_BS2_on = np.array(status_atf1_BS2_on[elt][0])
-            # EcoRV_atf1_BS2_on = np.array(status_atf1_BS2_on[elt][1])
+            cenH_atf1_BS1_on = np.array(status_atf1_BS1_on[elt][0])
+            EcoRV_atf1_BS1_on = np.array(status_atf1_BS1_on[elt][1])
+            
+            #switch the values of the list (1 stands now for timepoint when reporter is on)
+            cenH_atf1_BS1_on=1-cenH_atf1_BS1_on
+            EcoRV_atf1_BS1_on=1-EcoRV_atf1_BS1_on
+            
+            cenH_list_atf1_BS1_on[elt]=cenH_atf1_BS1_on
+            EcoRV_list_atf1_BS1_on[elt]=EcoRV_atf1_BS1_on
+            
+            
+            
+            
+            cenH_atf1_BS2_on = np.array(status_atf1_BS2_on[elt][0])
+            EcoRV_atf1_BS2_on = np.array(status_atf1_BS2_on[elt][1])
            
             
-            # #switch the values of the list (1 stands now for timepoint when reporter is on)
-            # cenH_atf1_BS2_on=1-cenH_atf1_BS2_on
-            # EcoRV_atf1_BS2_on=1-EcoRV_atf1_BS2_on
+            #switch the values of the list (1 stands now for timepoint when reporter is on)
+            cenH_atf1_BS2_on=1-cenH_atf1_BS2_on
+            EcoRV_atf1_BS2_on=1-EcoRV_atf1_BS2_on
             
-            # cenH_list_atf1_BS2_on[elt]=cenH_atf1_BS2_on
-            # EcoRV_list_atf1_BS2_on[elt]=EcoRV_atf1_BS2_on
+            cenH_list_atf1_BS2_on[elt]=cenH_atf1_BS2_on
+            EcoRV_list_atf1_BS2_on[elt]=EcoRV_atf1_BS2_on
             
             
             # print(cenH_atf1_on)
@@ -333,12 +333,12 @@ for p in parameters:
         
         
         # save state_list
-        with open('27kB_threshold_9.txt' %tuple(p), 'wb') as F:
+        with open('27kB_threshold_9.txt', 'wb') as F:
             pickle.dump(cenH_total, F)
             
         
         # save state_list
-        with open('27kb_threshold_9.txt' %tuple(p), 'wb') as F:
+        with open('27kb_threshold_9.txt', 'wb') as F:
             pickle.dump(EcoRV_total, F)
 
 
