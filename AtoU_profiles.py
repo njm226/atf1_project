@@ -194,16 +194,16 @@ for p in parameters:
         #all 27.5 kb region!!
         
         X_Y_atf1_on=[[182,p[0],p[1],p[2],0]] #X_Y_atf1_on=[[182,49,130,0]]
-        # X_Y_atf1_off=[[182,p[0],p[1],p[2],1]] #X_Y_atf1_off=[[182,49,130,1]]
-        # X_Y_atf1_BS1_on=[[182,p[0],p[1],p[2],2]] #X_Y_atf1_off=[[182,49,130,1]]
-        # X_Y_atf1_BS2_on=[[182,p[0],p[1],p[2],3]] #X_Y_atf1_off=[[182,49,130,1]]
+        X_Y_atf1_off=[[182,p[0],p[1],p[2],1]] #X_Y_atf1_off=[[182,49,130,1]]
+        X_Y_atf1_BS1_on=[[182,p[0],p[1],p[2],2]] #X_Y_atf1_off=[[182,49,130,1]]
+        X_Y_atf1_BS2_on=[[182,p[0],p[1],p[2],3]] #X_Y_atf1_off=[[182,49,130,1]]
         
         
         
         repeat_atf1_on=reps*X_Y_atf1_on
-        # repeat_atf1_off=reps*X_Y_atf1_off
-        # repeat_atf1_BS1_on=reps*X_Y_atf1_BS1_on
-        # repeat_atf1_BS2_on=reps*X_Y_atf1_BS2_on
+        repeat_atf1_off=reps*X_Y_atf1_off
+        repeat_atf1_BS1_on=reps*X_Y_atf1_BS1_on
+        repeat_atf1_BS2_on=reps*X_Y_atf1_BS2_on
         
         
         #if __name__ == '__main__':
