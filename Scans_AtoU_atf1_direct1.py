@@ -78,195 +78,195 @@ for i in X:
         
 state_list = pool.map(ss, data_pairs_small)
 
+print(state_list)
+
+# with open('state_ss_atf1_AtoU_direct1_factor2_reduced.txt', 'wb') as F:
+#       pickle.dump(state_list, F)   
 
 
-with open('state_ss_atf1_AtoU_direct1_factor2_reduced.txt', 'wb') as F:
-      pickle.dump(state_list, F)   
 
 
+# b_value_list = []
 
+# cenH_silenced = 0
+# EcoRV_silenced = 0
 
-b_value_list = []
+# cenH_silenced_sm = 0
+# EcoRV_silenced_sm = 0
 
-cenH_silenced = 0
-EcoRV_silenced = 0
+# cenH_silenced_sl = 0
+# EcoRV_silenced_sl = 0
 
-cenH_silenced_sm = 0
-EcoRV_silenced_sm = 0
+# duration=201#15
 
-cenH_silenced_sl = 0
-EcoRV_silenced_sl = 0
-
-duration=201#15
-
-# this for loop goes through all data_pairs (list of 400) and repeats simulation reps times
-for i in range(len(data_pairs)):
+# # this for loop goes through all data_pairs (list of 400) and repeats simulation reps times
+# for i in range(len(data_pairs)):
     
     
-    #determine how often the simulation for each system and specific parameter pair should be repeated
-    reps=1000
+#     #determine how often the simulation for each system and specific parameter pair should be repeated
+#     reps=1000
 
-    repeat = [data_pairs[i]]*reps
-    repeat_sm = [data_pairs_sm[i]]*reps
-    repeat_sl = [data_pairs_sl[i]]*reps
+#     repeat = [data_pairs[i]]*reps
+#     repeat_sm = [data_pairs_sm[i]]*reps
+#     repeat_sl = [data_pairs_sl[i]]*reps
     
     
-    # store the simulation results (status list of cenH and EcoRV) of each simulation
-    if __name__ == '__main__':
-        # 
-        status_small = pool.map(simple, repeat) 
-        status_m = pool.map(simple, repeat_sm) 
-        status_large = pool.map(simple, repeat_sl) 
+#     # store the simulation results (status list of cenH and EcoRV) of each simulation
+#     if __name__ == '__main__':
+#         # 
+#         status_small = pool.map(simple, repeat) 
+#         status_m = pool.map(simple, repeat_sm) 
+#         status_large = pool.map(simple, repeat_sl) 
 
     
-    # two dimensional arrays with dimensions len(repeat) and duration (pre allocation)
-    cenH_list_small = np.zeros([len(repeat),duration])
-    EcoRV_list_small = np.zeros([len(repeat),duration])
+#     # two dimensional arrays with dimensions len(repeat) and duration (pre allocation)
+#     cenH_list_small = np.zeros([len(repeat),duration])
+#     EcoRV_list_small = np.zeros([len(repeat),duration])
     
     
-    cenH_list_m = np.zeros([len(repeat),duration])
-    EcoRV_list_m = np.zeros([len(repeat),duration])
+#     cenH_list_m = np.zeros([len(repeat),duration])
+#     EcoRV_list_m = np.zeros([len(repeat),duration])
     
     
-    cenH_list_large = np.zeros([len(repeat),duration])
-    EcoRV_list_large = np.zeros([len(repeat),duration])
+#     cenH_list_large = np.zeros([len(repeat),duration])
+#     EcoRV_list_large = np.zeros([len(repeat),duration])
     
     
-    cenH_list_max = np.zeros([len(repeat),duration])
-    EcoRV_list_max = np.zeros([len(repeat),duration])
+#     cenH_list_max = np.zeros([len(repeat),duration])
+#     EcoRV_list_max = np.zeros([len(repeat),duration])
     
     
 
     
-    # fill the columns with information on the status of different cells in parallel
-    # at a certain (fixed) timepoint 
-    for elt in range(len(repeat)):
+#     # fill the columns with information on the status of different cells in parallel
+#     # at a certain (fixed) timepoint 
+#     for elt in range(len(repeat)):
         
-        cenH_small = np.array(status_small[elt][0])
-        EcoRV_small = np.array(status_small[elt][1])
+#         cenH_small = np.array(status_small[elt][0])
+#         EcoRV_small = np.array(status_small[elt][1])
         
-        #switch the values of the list (1 stands now for timepoint when reporter is on)
-        cenH_small=1-cenH_small
-        EcoRV_small=1-EcoRV_small
+#         #switch the values of the list (1 stands now for timepoint when reporter is on)
+#         cenH_small=1-cenH_small
+#         EcoRV_small=1-EcoRV_small
         
-        # stores the cenH part in a seperate two dimensional array (reps X duration)
-        cenH_list_small[elt]=cenH_small
-        EcoRV_list_small[elt]=EcoRV_small
+#         # stores the cenH part in a seperate two dimensional array (reps X duration)
+#         cenH_list_small[elt]=cenH_small
+#         EcoRV_list_small[elt]=EcoRV_small
         
         
         
         
             
         
-        cenH_m = np.array(status_m[elt][0])
-        EcoRV_m = np.array(status_m[elt][1])
+#         cenH_m = np.array(status_m[elt][0])
+#         EcoRV_m = np.array(status_m[elt][1])
         
-        #switch the values of the list (1 stands now for timepoint when reporter is on)
-        cenH_m=1-cenH_m
-        EcoRV_m=1-EcoRV_m
+#         #switch the values of the list (1 stands now for timepoint when reporter is on)
+#         cenH_m=1-cenH_m
+#         EcoRV_m=1-EcoRV_m
         
-        # stores the cenH part in a seperate two dimensional array (reps X duration)
-        cenH_list_m[elt]=cenH_m
-        EcoRV_list_m[elt]=EcoRV_m
-        
-        
+#         # stores the cenH part in a seperate two dimensional array (reps X duration)
+#         cenH_list_m[elt]=cenH_m
+#         EcoRV_list_m[elt]=EcoRV_m
         
         
         
         
-        cenH_large = np.array(status_large[elt][0])
-        EcoRV_large = np.array(status_large[elt][1])
-        
-        #switch the values of the list (1 stands now for timepoint when reporter is on)
-        cenH_large=1-cenH_large
-        EcoRV_large=1-EcoRV_large
-        
-        # stores the cenH part in a seperate two dimensional array (reps X duration)
-        cenH_list_large[elt]=cenH_large
-        EcoRV_list_large[elt]=EcoRV_large
         
         
+#         cenH_large = np.array(status_large[elt][0])
+#         EcoRV_large = np.array(status_large[elt][1])
+        
+#         #switch the values of the list (1 stands now for timepoint when reporter is on)
+#         cenH_large=1-cenH_large
+#         EcoRV_large=1-EcoRV_large
+        
+#         # stores the cenH part in a seperate two dimensional array (reps X duration)
+#         cenH_list_large[elt]=cenH_large
+#         EcoRV_list_large[elt]=EcoRV_large
         
         
-        # print(cenH_small)
-        # print(cenH_m)
-        # print(cenH_large)
-        # print(cenH_max)
+        
+        
+#         # print(cenH_small)
+#         # print(cenH_m)
+#         # print(cenH_large)
+#         # print(cenH_max)
     
     
     
     
-    #output (Histograms!)
-    cenH_total_small = (sum(cenH_list_small))/reps
-    #
-    ys = (sum(EcoRV_list_small))/reps
+#     #output (Histograms!)
+#     cenH_total_small = (sum(cenH_list_small))/reps
+#     #
+#     ys = (sum(EcoRV_list_small))/reps
     
     
     
     
-    cenH_total_m = (sum(cenH_list_m))/reps
-    #
-    ym = (sum(EcoRV_list_m))/reps
+#     cenH_total_m = (sum(cenH_list_m))/reps
+#     #
+#     ym = (sum(EcoRV_list_m))/reps
     
     
     
     
-    cenH_total_large = (sum(cenH_list_large))/reps
-    #
-    yl = (sum(EcoRV_list_large))/reps
+#     cenH_total_large = (sum(cenH_list_large))/reps
+#     #
+#     yl = (sum(EcoRV_list_large))/reps
     
     
     
     
 
-    ys = ys[3:]
-    ym = ym[3:]
-    yl = yl[3:]
-    x = np.array(range(duration-3))  
+#     ys = ys[3:]
+#     ym = ym[3:]
+#     yl = yl[3:]
+#     x = np.array(range(duration-3))  
         
-    # fitting function
-    def model(x,a,b):
-        return a*np.exp(-x/b)
+#     # fitting function
+#     def model(x,a,b):
+#         return a*np.exp(-x/b)
     
-    #Perform the curve fit
-    popt_s, pcov_s = curve_fit(model, x, ys, p0=[1,1], maxfev=5000)
-    #print(popt_s)
+#     #Perform the curve fit
+#     popt_s, pcov_s = curve_fit(model, x, ys, p0=[1,1], maxfev=5000)
+#     #print(popt_s)
     
-    b_s = popt_s[1]
+#     b_s = popt_s[1]
     
-    #a_s, b_s = unc.correlated_values(popt_s, pcov_s)
-    
-    
-    
-     #Perform the curve fit
-    popt_m, pcov_m = curve_fit(model, x, ym, p0=[1,1], maxfev=5000)
-    #print(popt_s)
-    
-    b_m = popt_m[1]
-    
-    #a_m, b_m = unc.correlated_values(popt_m, pcov_m)
+#     #a_s, b_s = unc.correlated_values(popt_s, pcov_s)
     
     
     
-     #Perform the curve fit
-    popt_l, pcov_l = curve_fit(model, x, yl, p0=[1,1], maxfev=5000)
-    #print(popt_s)
+#      #Perform the curve fit
+#     popt_m, pcov_m = curve_fit(model, x, ym, p0=[1,1], maxfev=5000)
+#     #print(popt_s)
     
-    b_l = popt_l[1]
+#     b_m = popt_m[1]
     
-    #a_l, b_l = unc.correlated_values(popt_l, pcov_l)
+#     #a_m, b_m = unc.correlated_values(popt_m, pcov_m)
+    
+    
+    
+#      #Perform the curve fit
+#     popt_l, pcov_l = curve_fit(model, x, yl, p0=[1,1], maxfev=5000)
+#     #print(popt_s)
+    
+#     b_l = popt_l[1]
+    
+#     #a_l, b_l = unc.correlated_values(popt_l, pcov_l)
     
 
     
-    b = [b_s, b_m, b_l]
-    print(b)
+#     b = [b_s, b_m, b_l]
+#     print(b)
     
-    b_value_list.append(b)
+#     b_value_list.append(b)
 
     
-# save Timing list
-with open('b_list_S100_atf1_AtoU_direct1_factor2_reduced.txt', 'wb') as F:
-    pickle.dump(b_value_list, F)
+# # save Timing list
+# with open('b_list_S100_atf1_AtoU_direct1_factor2_reduced.txt', 'wb') as F:
+#     pickle.dump(b_value_list, F)
     
     
         

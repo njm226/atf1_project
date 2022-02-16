@@ -171,12 +171,12 @@ for p in parameters:
         
         
         # save state_list
-        with open('s1_pos89_cenH.txt', 'wb') as F:
+        with open('wt_threshold_9.txt', 'wb') as F:
             pickle.dump(cenH_total_wt, F)
             
         
         # save state_list
-        with open('s1_pos89_EcoRV.txt', 'wb') as F:
+        with open('wt_threshold_9.txt', 'wb') as F:
             pickle.dump(EcoRV_total_wt, F)
             
             
