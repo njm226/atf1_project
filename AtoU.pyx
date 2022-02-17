@@ -499,8 +499,8 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
              # erase current state vector again
             current_states = []
             
-            S_nucleosomes_cenH.append(cenH_red)
-                
+            #S_nucleosomes_cenH.append(cenH_red)
+            S_nucleosomes_cenH.append(YFP_red)
             
             # the state of the mt_region at this time point is stored 
             # mt_matrix[m]=mt_region
