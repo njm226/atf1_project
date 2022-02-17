@@ -33,6 +33,9 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
     cdef int cenHl = 60
     cdef int cenHr = 91 
     
+    cdef int YFPl = 65
+    cdef int YFPr = 79 
+    
     ##borders of first atf1 region
     #cdef int atf1l = 122
     #cdef int atf1r = 123
@@ -65,7 +68,7 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
         
     
     # silencing_threshold
-    cdef int threshold1 = 22#16
+    cdef int threshold1 = 10#16
     cdef int threshold2 = 10#7
 
     cdef int low_t_index
@@ -457,18 +460,30 @@ def t_loop(int duration, int[:] mt_region, int[:] positions, double[:] rates, in
                 states.append(state)
                 current_states.append(state)
                 
-            cenH_blue = current_states[cenHl:cenHr+1].count('blue')
-            cenH_red = current_states[cenHl:cenHr+1].count('red')
+            #cenH_blue = current_states[cenHl:cenHr+1].count('blue')
+            #cenH_red = current_states[cenHl:cenHr+1].count('red')
+            YFP_blue = current_states[YFPl:YFPr].count('blue')
+            YFP_red = current_states[YFPl:YFPr].count('red')
             
-            EcoRV_blue = current_states[EcoRVl:EcoRVr+1].count('blue')
-            EcoRV_red = current_states[EcoRVl:EcoRVr+1].count('red')
+            EcoRV_blue = current_states[EcoRVl:EcoRVr].count('blue')
+            EcoRV_red = current_states[EcoRVl:EcoRVr].count('red')
             
-            if cenH_red - cenH_blue >= threshold1:
+            #  if cenH_red - cenH_blue >= threshold1:
+            #     cenH_silent = 1
+            # else:
+            #     cenH_silent = 0
+                
+            # if EcoRV_red - EcoRV_blue >= threshold2:
+            #     EcoRV_silent = 1
+            # else:
+            #     EcoRV_silent = 0
+            
+            if YFP_red >= threshold1:
                 cenH_silent = 1
             else:
                 cenH_silent = 0
                 
-            if EcoRV_red - EcoRV_blue >= threshold2:
+            if EcoRV_red >= threshold2:
                 EcoRV_silent = 1
             else:
                 EcoRV_silent = 0
